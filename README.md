@@ -11,6 +11,6 @@ These are compiled with package.json scripts to prepare the final package of ass
 
 ### Development
 Run `npm run watch:css` to continually watch for changes in any of the scss files and compile them immediately.
-Any changes in the main.js file need to be compiled with `npm run build:js`.
+Any changes in the main.js file need to be compiled with `npm run build:js`. 
 
 

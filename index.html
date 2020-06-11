@@ -4,6 +4,7 @@
   <title>Carharrt Styleguide</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <link rel="stylesheet" type="text/css" href="dist/css/main.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/styleguide.css">
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="dist/js/app.js"></script>
@@ -240,19 +241,27 @@
       <span class="section-header h3">Buttons</span>
       <div class="button-section">
          .btn - Default - 2px border, Proxima nova Bold 15pt
-         <button class="btn">Button</button>
+         <div class="js-view-source">
+           <button class="btn">Button</button>
+         </div>
       </div>
       <div class="button-section">
          .btn.btn-secondary - Secondary
-         <button class="btn btn-secondary">Button</button>
+         <div class="js-view-source">
+          <button class="btn btn-secondary">Button</button>
+         </div>
       </div>
       <div class="button-section">
          .btn.btn-form - Form Submit
-         <button class="btn btn-form">Button</button>
+         <div class="js-view-source">
+          <button class="btn btn-form">Button</button>
+         </div>
       </div>
       <div class="button-section">
          .btn.btn-action - Action - Proxima Nova Bold 20pt
-         <button class="btn btn-action">Action</button>
+         <div class="js-view-source">
+          <button class="btn btn-action">Action</button>
+         </div>
       </div>
     </div>
     <div id="forms-section" class="style-guide-section">
@@ -809,54 +818,6 @@
     </div>
   </div>
 </div>
-<div id="image-section" class="style-guide-section">
-    <span class="section-header h3">Image Asset Specifications</span>
-    <div class="image-asset-group">
-      <h4>Hompage Image Assets</h4>
-      <div class="home-hero-container style-guide-image-container">
-        <picture>
-          <source srcset="images/home-hero-desktop-1600x800.jpg" media="(min-width: 768px)">
-          <img srcset="images/home-hero-mobile-750x640.jpg" alt="Alt Text Goes Here" class="home-hero-image">
-        </picture>
-      </div>
-      <div class="home-slideshow-container style-guide-image-container">
-        <picture>
-          <source srcset="images/home-slideshow-desktop-1170x520.jpg" media="(min-width: 768px)">
-          <img srcset="images/home-slideshow-mobile-750x640.jpg" alt="Alt Text Goes Here" class="home-slideshow-image">
-        </picture>
-      </div>
-    </div>
-    <div class="image-asset-group">
-      <h4>PLP Image Assets</h4>
-      <div class="plp-hero-container style-guide-image-container">
-        <picture>
-          <source srcset="images/plp-hero-desktop-1920x400.jpg" media="(min-width: 768px)">
-          <img srcset="images/plp-hero-mobile-750x200.jpg" alt="Alt Text Goes Here" class="plp-hero-image">
-        </picture>
-      </div>
-      <div class="plp-infusion-container style-guide-image-container container">
-        <picture>
-          <source srcset="images/plp-infusion-desktop-870x490.jpg" media="(min-width: 768px)">
-          <img srcset="images/plp-infusion-mobile-670x440.jpg" alt="Alt Text Goes Here" class="plp-infusion-image">
-        </picture>
-      </div>
-    </div>
-    <div class="image-asset-group">
-      <h4>PDP Image Assets</h4>
-      <div class="pdp-background-container style-guide-image-container">
-        <picture>
-          <source srcset="images/pdp-background-desktop-1600x1200.jpg" media="(min-width: 768px)">
-          <img srcset="images/pdp-background-mobile-750x866.jpg" alt="Alt Text Goes Here" class="pdp-background-image">
-        </picture>
-      </div>
-    </div>
-    <div class="image-asset-group">
-      <h4>Navigation Image Assets</h4>
-    </div>
-    <div class="image-asset-group">
-      <h4>Footer Image Assets</h4>
-    </div>
-  </div>
 </body>
 
 </html>

@@ -31,18 +31,15 @@ $(function(){
     $styleGuideAnchorList.append('<li class="style-guide-anchor-item"><a href="#' + id + '" class="style-guide-anchor-link">' + title + '</a></li>')
   });
 
-  //build out the base nav section
-  var baseHTML = '<div class="style-guide-base-nav"><div class="container"><ul>';
+  $('.js-view-source').each(function(){
+    var $this = $(this),
+        html = $this[0].innerHTML.trim();
 
-  //Each style guide page
-  baseHTML += '<li><a href="/outdoor-research">Core Styles</a></li>';
-  baseHTML += '<li><a href="/outdoor-research/templates/single-column.html">Single Column</a></li>';
-  baseHTML += '<li><a href="/outdoor-research/templates/single-column-media.html">Single Column w/ Media</a></li>';
-  baseHTML += '<li><a href="/outdoor-research/templates/components.html">Components</a></li>';
+    var sourceViewerHtml = '<div class="source-view-code">'
+    sourceViewerHtml += '<xmp>' + html + '</xmp>';
+    sourceViewerHtml += '</div>';
 
-  baseHTML += '</ul></div></div>';
-
-  $('body').append(baseHTML);
-
+    $this.after(sourceViewerHtml);
+  });
 });
 

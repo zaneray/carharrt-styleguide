@@ -1,0 +1,305 @@
+label {
+  font-size: $font-size-100;
+  line-height: $font-size-100;
+  text-transform: uppercase;
+  color: $gray-600;
+  font-family: $font-family-sans-bold;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+textarea {
+  width: 100%;
+  border: 1px solid $gray-400;
+  background-color: $gray-100;
+  padding: $spacing-300;
+  color: $gray-500;
+  font-family: $font-family-sans-italic;
+  font-size: $font-size-100;
+  transition: $transition-base;
+  margin: $spacing-100 0 $spacing-400;
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none;
+
+  &:focus,
+  &:active,
+  &:not(:placeholder-shown) {
+    border-color: $gray-600;
+    font-family: $font-family-sans-regular;
+    color: $gray-600;
+    background-color: $white;
+    box-shadow: none;
+  }
+
+  &:focus {
+    outline: 3px solid $gold;
+  }
+}
+
+.input-error {
+  margin-bottom: $spacing-400;
+
+  input:not([type="radio"]):not([type="checkbox"]) {
+    border-color: $alert-red;
+    border-width: 3px;
+    background-color: $alert-red-light;
+    color: $gray-600;
+    margin-bottom: $spacing-100;
+  }
+
+  .validation-error {
+    font-size: $font-size-100;
+    font-family: $font-family-sans-italic;
+    color: $alert-red;
+    text-transform: none;
+  }
+}
+
+// Select Lists
+
+select {
+  width: 100%;
+  border: 1px solid $gray-400;
+  background-color: $gray-100;
+  padding: $spacing-300;
+  color: $gray-700;
+  font-family: $font-family-sans-regular;
+  font-size: $font-size-100;
+  transition: $transition-base;
+  margin: $spacing-100 0 $spacing-400;
+  -webkit-appearance: none;
+  background-position: calc(100% - #{$spacing-200}) 50%;
+  background-size: 17px 12px;
+  background-image: url($icon-select-small);
+  background-repeat: no-repeat;
+  border-radius: 0;
+}
+
+.select-with-link {
+  position: relative;
+
+  a {
+    position: absolute;
+    top: 0;
+    right: $spacing-100;
+    text-decoration: underline;
+    font-size: $font-size-100;
+  }
+}
+
+select:focus {
+  border: 1px solid #000;
+  //outline: none;
+}
+
+/*MAGIC: hides dotted lines in FF for mac*/
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+select::-moz-focus-inner,
+option::-moz-focus-inner {
+  //outline: none;
+
+}
+
+/*MAGIC: this is the key for getting rid of the down arrow in IE*/
+select::-ms-expand {
+  display: none;
+}
+
+// End Select Lists
+
+//.input-btn {
+//  position: relative;
+//
+//  input {
+//    padding-right: 160px;
+//  }
+//
+//  .btn {
+//    position: absolute;
+//    right: 0;
+//    bottom: 10px;
+//    border-radius: 0 5px 5px 0;
+//    width: auto;
+//
+//    @media (min-width: 500px) {
+//      width: 150px;
+//    }
+//  }
+//}
+
+
+//
+//textarea {
+//  height: 240px;
+//  padding: 10px;
+//}
+
+fieldset {
+  border: none;
+  font-size: $font-size-100;
+}
+
+// Checkboxes
+
+// 1. Visually hide the actual checkbox. DO NOT USE DISPLAY NONE
+//.checkbox-default input[type="checkbox"] {
+//  opacity: 0;
+//  height: 1px;
+//  width: 1px;
+//  margin: -1px;
+//}
+
+
+// 2. Align the fake checkbox and label text
+.checkbox-default {
+  $checkbox-size: $spacing-350; //20px
+  $checkbox-border-width: 0.0625rem; //1px
+  $checkbox-focus-width: 0.1875rem; //3px
+
+  display: flex;
+  align-items: center;
+  padding: $spacing-100;
+
+  .checkbox-label {
+    padding-left: $spacing-100;
+    text-transform: capitalize;
+  }
+
+  // Visually hide the actual checkbox. DO NOT USE DISPLAY NONE
+  input[type="checkbox"] {
+    opacity: 0;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+  }
+
+  // Make the div inside the label look like a checkbox
+  input[type="checkbox"] + div {
+    position: relative;
+    height: $checkbox-size;
+    width: $checkbox-size;
+    border: $checkbox-border-width solid $gray-600;
+    background: unset;
+
+    // Before and after pseudo elements display the focus and checked states
+    &:before,
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      height: $checkbox-size - 2*$checkbox-border-width;
+      width: $checkbox-size - 2*$checkbox-border-width;
+      border: $checkbox-focus-width solid transparent;
+    }
+  }
+
+  // when a checkbox receives focus, style the label's div:before pseudo element
+  input[type="checkbox"]:focus + div {
+    // browser default focus ring (optional)
+    //outline: 1px dashed #212121;
+    //outline: 5px auto -webkit-focus-ring-color;
+
+    &:before {
+      border-color: $gold;
+    }
+  }
+
+  // when a checkbox is checked, style the label's div:before and :after pseudo elements
+  input[type="checkbox"]:checked + div {
+    &:before {
+      border-color: $gold;
+      background-color: $gold;
+    }
+
+    &:after {
+      top: -$checkbox-border-width*2;
+      left: -$checkbox-border-width*2;
+      content: url($icon-check-small);
+    }
+  }
+}
+
+// Radio Buttons
+
+.radio-default {
+  $radio-size: $spacing-350; //20px
+  $radio-border-width: 0.0625rem; //1px
+  $radio-focus-width: 0.1875rem; //3px
+
+  display: flex;
+  align-items: center;
+  padding: $spacing-100;
+
+  .radio-label {
+    padding-left: $spacing-100;
+    text-transform: capitalize;
+  }
+
+  // Hide the radio button visually.
+  input[type="radio"] {
+    opacity: 0;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+  }
+
+  input[type="radio"] + div {
+    position: relative;
+    height: $radio-size;
+    width: $radio-size;
+    border: $radio-border-width solid $gray-600;
+    background: unset;
+    border-radius: 50%;
+
+    // Before and after pseudo elements display the focus and checked states
+    &:before,
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      border: $radio-focus-width solid transparent;
+      border-radius: 50%;
+    }
+
+    &:before {
+      height: $radio-size - 2*$radio-border-width;
+      width: $radio-size - 2*$radio-border-width;
+    }
+
+    &:after {
+      height: $radio-size - 2*($radio-focus-width + $radio-border-width);
+      width: $radio-size - 2*($radio-focus-width + $radio-border-width);;
+    }
+  }
+
+  // when a radio receives focus, style the label's div:before pseudo element
+  input[type="radio"]:focus + div {
+    // browser default focus ring (optional)
+    //outline: 1px dashed #212121;
+    //outline: 5px auto -webkit-focus-ring-color;
+
+    &:before {
+      border-color: $gold;
+    }
+  }
+
+  // when a radio is checked, style the label's div:before and :after pseudo elements
+  input[type="radio"]:checked + div {
+    &:before {
+      border-color: $gold;
+      background-color: $gold;
+    }
+
+    &:after {
+      top: $radio-focus-width;
+      left: $radio-focus-width;
+      background-color: $gray-600;
+    }
+  }
+}

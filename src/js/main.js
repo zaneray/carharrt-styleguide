@@ -23,6 +23,16 @@ $(function(){
     $('.style-guide-anchor-nav').removeClass('active');
   })
 
+  $('.toggle-button').on('click touchstart', function(e) {
+    var toggleState = $(this).attr("aria-checked");
+
+    if (toggleState === 'true') {
+      $(this).attr("aria-checked", "false");
+    } else {
+      $(this).attr("aria-checked", "true");
+    }
+  })
+
   var $styleGuideAnchorList = $('#style-guide-anchor-list');
   //set up the anchor nav links
   $('.style-guide-section').each(function(){
@@ -42,4 +52,50 @@ $(function(){
     $this.after(sourceViewerHtml);
   });
 });
+
+
+function bindAccordionToggle(parentID) {
+  console.log('in accordion');
+  $('#' + parentID + ' li .accordion-trigger').on('click', function() {
+    console.log('triggered function');
+    var $trigger = $(this),
+      $content = $('#' + $trigger.attr('aria-controls')),
+      accordionIsOpen = $trigger.attr('aria-expanded');
+
+    // (Optional) Ensure no other accordions are open
+    checkOtherAccordions(parentID, $trigger[0]);
+
+    if (accordionIsOpen ==='true') {
+      $trigger.attr('aria-expanded', 'false');
+      $content.attr('aria-hidden', 'true');
+      $content.slideUp();
+    } else {
+      $trigger.attr('aria-expanded', 'true');
+      $content.attr('aria-hidden', 'false');
+      $content.slideDown();
+    }
+  });
+};
+
+// (Optional) Ensure no other accordions are open
+function checkOtherAccordions (parentID, trigger) {
+  var accordionTriggers = $('#' + parentID + ' li .accordion-trigger');
+
+  for (var i=0; i < accordionTriggers.length; i++) {
+    // Do not close the accordion we're trying to open
+    if (accordionTriggers[i] != trigger) {
+
+      // If another accordion is open, close it
+      if (($(accordionTriggers[i]).attr('aria-expanded')) == 'true') {
+        $(accordionTriggers[i]).attr('aria-expanded', 'false');
+        var otherContent = $(accordionTriggers[i]).attr('aria-controls');
+        $('#' + otherContent).attr('aria-hidden', 'true');
+        $('#' + otherContent).slideUp();
+      }
+    }
+  }
+}
+
+
+
 

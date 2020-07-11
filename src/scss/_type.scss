@@ -1,5 +1,5 @@
 /* TEXT STYLES */
-html{
+html {
   -webkit-font-smoothing: antialiased;
 }
 
@@ -11,9 +11,9 @@ html{
 
 .dark-theme,
 .dark-theme * {
-    color: $white;
-    border-color: $white;
-    background-color: $gray-700;
+  color: $white;
+  border-color: $white;
+  background-color: $gray-700;
 }
 
 // Heading Styles
@@ -23,22 +23,23 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-sans-bold;
   line-height: 1;
   color: $gray-700;
-  }
+}
 
 h1,
 .h1 {
-  font-size: $font-size-600;
+  font-size: $font-size-500;
 
-  @media(min-width: $screen-desktop) {
+  @media(min-width: $screen-tablet) {
     font-size: $font-size-700;
   }
+}
 
-  &.pdp {
-    font-size: $font-size-500;
+.pdp h1,
+.pdp .h1 {
+  font-size: $font-size-500;
 
-    @media(min-width: $screen-desktop) {
-      font-size: $font-size-600;
-    }
+  @media(min-width: $screen-desktop) {
+    font-size: $font-size-600;
   }
 }
 
@@ -46,90 +47,58 @@ h2,
 .h2 {
   font-size: $font-size-400;
 
-  @media(min-width: $screen-desktop) {
+  @media(min-width: $screen-tablet) {
     font-size: $font-size-500;
-
   }
+}
 
-  //&.pdp {
-  //  font-size: $font-size-;
-  //
-  //  @media(min-width: $screen-) {
-  //    font-size: $font-size-;
-  //  }
-  //}
+.pdp h2,
+.pdp .h2 {
+  font-size: $font-size-400;
 }
 
 h3,
 .h3 {
   font-size: $font-size-300;
 
-  @media(min-width: $screen-desktop) {
+  @media(min-width: $screen-tablet) {
     font-size: $font-size-400;
   }
+}
 
-  //&.pdp {
-  //  font-size: $font-size-;
-  //
-  //  @media(min-width: $screen-) {
-  //    font-size: $font-size-;
-  //  }
-  //}
+.pdp h3,
+.pdp .h3 {
+  font-size: $font-size-300;
 }
 
 h4,
 .h4 {
   font-size: $font-size-200;
 
-  @media(min-width: $screen-desktop) {
+  @media(min-width: $screen-tablet) {
     font-size: $font-size-300;
   }
-
-  //&.pdp {
-  //  font-size: $font-size-;
-  //
-  //  @media(min-width: $screen-) {
-  //    font-size: $font-size-;
-  //  }
-  //}
 }
 
 h5,
 .h5 {
   font-size: $font-size-100;
 
-  @media(min-width: $screen-desktop) {
+  @media(min-width: $screen-tablet) {
     font-size: $font-size-200;
   }
-
-  //&.pdp {
-  //  font-size: $font-size-;
-  //
-  //  @media(min-width: $screen-) {
-  //    font-size: $font-size-;
-  //  }
-  //}
 }
 
 h6,
 .h6 {
   font-size: $font-size-75;
 
-  @media(min-width: $screen-desktop) {
+  @media(min-width: $screen-tablet) {
     font-size: $font-size-100;
   }
-
-  //&.pdp {
-  //  font-size: $font-size-;
-  //
-  //  @media(min-width: $screen-) {
-  //    font-size: $font-size-;
-  //  }
-  //}
 }
 
 // Paragraph Styles
-
 p,
 .paragraph {
   font-family: $font-family-sans-regular;
@@ -169,57 +138,112 @@ a {
   text-decoration: none;
 
   &:hover,
-    &:focus {
+  &:focus {
     text-decoration: underline;
+  }
+
+  &.list-link {
+    display: block;
+    position: relative;
+    padding: $spacing-300 $spacing-100;
+    text-transform: uppercase;
+    border-top: 1px solid $gray-300;
+    border-bottom: 1px solid $gray-300;
+    font-size: $font-size-100;
+    color: $gray-600;
+    font-family: $font-family-sans-bold;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:after {
+      position: absolute;
+      top: $spacing-300;
+      right: $spacing-100;
+      content: url($icon-arrow);
+      height: $spacing-300;
+      width: $spacing-300;
+    }
+  }
+
+  &.bulleted {
+    padding-left: $spacing-600;
+    padding-right: $spacing-300;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: $spacing-300;
+      left: $spacing-300;
+      height: $spacing-300;
+      width: $spacing-300;
+      border-radius: 50%;
+      border: $spacing-50/2 solid $gray-500;
+      background: $gray-300;
+    }
   }
 }
 
 label {
-    font-family: $font-family-sans-regular;
-    font-size: $font-size-75;
-    color: $gray-700;
-    margin-top: 0;
-    line-height: 1.5;
-    text-transform: none;
+  font-family: $font-family-sans-regular;
+  font-size: $font-size-75;
+  color: $gray-700;
+  margin-top: 0;
+  line-height: 1.5;
+  text-transform: none;
 }
 
 // Utility classes
 .font-size-1000 {
   font-size: $font-size-1000;
 }
+
 .font-size-900 {
   font-size: $font-size-900;
 }
+
 .font-size-800 {
   font-size: $font-size-800;
 }
+
 .font-size-700 {
   font-size: $font-size-700;
 }
+
 .font-size-600 {
   font-size: $font-size-600;
 }
+
 .font-size-500 {
   font-size: $font-size-500;
 }
+
 .font-size-400 {
   font-size: $font-size-400;
 }
+
 .font-size-300 {
   font-size: $font-size-300;
 }
+
 .font-size-200 {
   font-size: $font-size-200;
 }
+
 .font-size-100 {
   font-size: $font-size-100;
 }
+
 .font-size-75 {
   font-size: $font-size-75;
 }
+
 .font-size-50 {
   font-size: $font-size-50;
 }
+
 .font-size-25 {
   font-size: $font-size-25;
 }

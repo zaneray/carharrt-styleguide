@@ -441,7 +441,17 @@
 
       <span class="sg-label">Text link</span>
       <div class="text-style-section js-view-source">
-        <a href="#">This is a text link.</a>
+        <a href="#">This is a text link</a>
+      </div>
+
+      <span class="sg-label">List style link</span>
+      <div class="text-style-section js-view-source">
+        <a href="#" class="list-link">This is a link</a>
+      </div>
+
+      <span class="sg-label">Bulleted list style link</span>
+      <div class="text-style-section js-view-source">
+        <a href="#" class="list-link bulleted">This is a link</a>
       </div>
     </div>
 
@@ -532,26 +542,42 @@
   <div id="forms-section" class="style-guide-section">
     <h2 class="section-header">Forms</h2>
 
-    <form novalidate>
+    <div novalidate>
       <h3>Inputs</h3>
-      <div>
+      <div class="js-view-source">
         <label for="input-example">This is a form label</label>
         <input type="text" id="input-example" name="input-example" placeholder="Placeholder"/>
         <label for="input-example" hidden>This is a hidden error message</label>
       </div>
 
-      <div>
+      <div class="js-view-source">
+        <label for="input-example">Input with Caption Above</label>
+        <p class="input-caption-above">This is an optional caption for the input. It can wrap to multiple lines.</p>
+        <input type="text" id="input-example-caption-above" name="input-example" placeholder="Placeholder"/>
+        <label for="input-example-caption-above" hidden>This is a hidden error message</label>
+      </div>
+
+      <div class="js-view-source">
+        <label for="input-example-caption-below">Input with Caption Below</label>
+        <input type="text" id="input-example-caption-below" name="input-example" placeholder="Placeholder"/>
+        <label for="input-example" hidden>This is a hidden error message</label>
+        <p class="input-caption-below">This is an optional caption for the input. It can wrap to multiple lines.</p>
+
+      </div>
+      <div class="js-view-source">
         <label for="input-disabled">This label is for a disabled input</label>
         <input type="text" disabled placeholder="Disabled" id="input-disabled"/>
       </div>
 
-      <div class="input-error">
-        <label for="input-error">This label is for an input with an error</label>
-        <input id="input-error" type="text" placeholder="Error Text Input"/>
-        <label for="input-error" class="validation-error">Describe the error with this input</label>
+      <div class="js-view-source">
+        <div class="input-error">
+          <label for="input-error">This label is for an input with an error</label>
+          <input id="input-error" type="text" placeholder="Error Text Input"/>
+          <label for="input-error" class="validation-error">Describe the error with this input</label>
+        </div>
       </div>
 
-      <div>
+      <div class="js-view-source">
         <label for="input-select">Select Label</label>
         <select id="input-select">
           <option value disabled selected>Please choose an option</option>
@@ -560,18 +586,45 @@
         </select>
       </div>
 
-      <div class="select-with-link">
-        <a href="#">Size and Fit Guide</a>
-        <label for="input-select-with-link">Select Label</label>
-        <select id="input-select-with-link">
+      <p class="sg-label">Note the inline style (<code>padding-left</code>) required for the select with internal label.
+        This value will need to be set based on the length of the label text.</p>
+      <div class="js-view-source">
+        <div class="select-with-internal-label">
+          <label for="input-select-with-internal-label">Select Label</label>
+          <select id="input-select-with-internal-label" style="padding-left: 107px;">
+            <option value disabled selected>Please choose an option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="js-view-source">
+        <div class="select-with-link">
+          <a href="#">Size and Fit Guide</a>
+          <label for="input-select-with-link">Select Label</label>
+          <select id="input-select-with-link">
+            <option value disabled selected>Please choose an option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="js-view-source">
+        <label for="input-select-with-caption">Select With Caption</label>
+        <select id="input-select-with-caption">
           <option value disabled selected>Please choose an option</option>
           <option value="1">Option 1</option>
           <option value="2">Option 2</option>
         </select>
+        <p class="input-caption-below">This is a caption below a select element</p>
       </div>
 
-      <fieldset>
-        <legend>Checkboxes</legend>
+      <div class="js-view-source">
+        <fieldset>
+          <legend>Checkboxes</legend>
 
           <label class="checkbox-default" for="checkbox1">
             <input type="checkbox"
@@ -596,67 +649,214 @@
             <div aria-hidden="true"></div>
             <span class="checkbox-label">Option 3</span>
           </label>
-      </fieldset>
+        </fieldset>
+      </div>
 
-      <fieldset>
-        <legend>Radio Buttons</legend>
-        <label class="radio-default" for="radio1">
-          <input type="radio"
-                 id="radio1"
-                 aria-label="Radio Option 1"
-                 name="radio-group-1" />
-          <div aria-hidden="true"></div>
-          <span class="radio-label">Radio 1</span>
-        </label>
+      <div class="js-view-source">
+        <fieldset>
+          <legend>Radio Buttons</legend>
+          <label class="radio-default" for="radio1">
+            <input type="radio"
+                   id="radio1"
+                   aria-label="Radio Option 1"
+                   name="radio-group-1"/>
+            <div aria-hidden="true"></div>
+            <span class="radio-label">Radio 1</span>
+          </label>
 
-        <label class="radio-default" for="radio2">
-          <input type="radio"
-                 id="radio2"
-                 aria-label="Radio Option 2"
-                 name="radio-group-1" />
-          <div aria-hidden="true"></div>
-          <span class="radio-label">Radio 2</span>
-        </label>
+          <label class="radio-default" for="radio2">
+            <input type="radio"
+                   id="radio2"
+                   aria-label="Radio Option 2"
+                   name="radio-group-1"/>
+            <div aria-hidden="true"></div>
+            <span class="radio-label">Radio 2</span>
+          </label>
 
-        <label class="radio-default" for="radio3">
-          <input type="radio"
-                 id="radio3"
-                 aria-label="Radio Option 3"
-                 name="radio-group-1" />
-          <div aria-hidden="true"></div>
-          <span class="radio-label">Radio 3</span>
-        </label>
+          <label class="radio-default" for="radio3">
+            <input type="radio"
+                   id="radio3"
+                   aria-label="Radio Option 3"
+                   name="radio-group-1"/>
+            <div aria-hidden="true"></div>
+            <span class="radio-label">Radio 3</span>
+          </label>
+        </fieldset>
+      </div>
+      </form>
+      <hr>
 
-      </fieldset>
-    </form>
+      <h2>Toggle Buttons</h2>
+      <p>Toggle buttons must have a text label. There are two ways to achieve this.</p>
 
+      <ol>
+        <li>
+          <p>Toggle button labelled by another element</p>
 
-    <div class="checkbox style-guide-checkbox-container">
-      <input type="checkbox" value="" name="checkbox-example" id="checkbox-example1"/>
-      <label for="checkbox-example1">Checkbox Label 1</label>
-      <input type="checkbox" value="" name="checkbox-example" id="checkbox-example2" checked/>
-      <label for="checkbox-example2">Checkbox Label 2</label>
-    </div>
-    <div class="radio style-guide-radio-container">
-      <input type="radio" value="" name="radio-example" id="radio-example1"/>
-      <label for="radio-example1">Radio Label 1</label>
-      <input type="radio" value="" name="radio-example" id="radio-example2" checked/>
-      <label for="radio-example2">Radio Label 2</label>
-    </div>
-    <div class="checkbox checkbox-small style-guide-checkbox-container">
-      <input type="checkbox" value="" name="checkbox-example" id="checkbox-example3"/>
-      <label for="checkbox-example3">Small Checkbox Label 1</label>
-      <input type="checkbox" value="" name="checkbox-example" id="checkbox-example4" checked/>
-      <label for="checkbox-example4">Small Checkbox Label 2</label>
-    </div>
-    <div class="radio radio-small style-guide-radio-container">
-      <input type="radio" value="" name="radio-example2" id="radio-example3"/>
-      <label for="radio-example3">Small Radio Label 1</label>
-      <input type="radio" value="" name="radio-example2" id="radio-example4" checked/>
-      <label for="radio-example4">Small Radio Label 2</label>
+          <div class="js-view-source">
+            <div id="toggleButtonLabel">Enable Dark Mode</div>
+            <button class="toggle-button"
+                    aria-labelledby="toggleButtonLabel"
+                    role="switch"
+                    aria-checked="true">
+            </button>
+          </div>
+        </li>
+        <li>
+          <div class="js-view-source">
+            <p>Toggle button labelled by <code>aria-label</code></p>
+            <button class="toggle-button"
+                    aria-label="Enable Dark Mode"
+                    role="switch"
+                    aria-checked="true">
+            </button>
+          </div>
+        </li>
+      </ol>
+
+      <p class="sg-label">Disabled toggle button</p>
+      <button class="toggle-button"
+              aria-labelledby="toggleButtonLabel"
+              role="switch"
+              aria-checked="true"
+              disabled>
+      </button>
+      <hr>
+      <div class="js-view-source">
+        <fieldset>
+          <legend>Color Selection</legend>
+          <label class="radio-color-swatch" for="radio-color-1">
+            <input type="radio" id="radio-color-1" name="radio-color-selection-group" aria-label="light gray"/>
+            <div class="bg-gray-300" aria-hidden="true"></div>
+          </label>
+
+          <label class="radio-color-swatch" for="radio-color-2">
+            <input type="radio" id="radio-color-2" name="radio-color-selection-group" aria-label="gray"/>
+            <div class="bg-gray-500" aria-hidden="true"></div>
+          </label>
+
+          <label class="radio-color-swatch" for="radio-color-3">
+            <input type="radio" id="radio-color-3" name="radio-color-selection-group" aria-label="dark gray"/>
+            <div class="bg-gray-700" aria-hidden="true"></div>
+          </label>
+
+          <label class="radio-color-swatch" for="radio-color-4">
+            <input type="radio" id="radio-color-4" name="radio-color-selection-group" disabled aria-label="brown"/>
+            <div class="bg-brown-light" aria-hidden="true"></div>
+          </label>
+        </fieldset>
+      </div>
+      <div class="js-view-source">
+        <fieldset>
+          <legend>Color Selection - small</legend>
+          <label class="radio-color-swatch small" for="radio-color-small-1">
+            <input name="small-radio-color-selection-group" type="radio" id="radio-color-small-1"
+                   aria-label="light gray"/>
+            <div class="bg-gray-300" aria-hidden="true"></div>
+          </label>
+
+          <label class="radio-color-swatch small" for="radio-color-small-2">
+            <input name="small-radio-color-selection-group" type="radio" id="radio-color-small-2" aria-label="gray"/>
+            <div class="bg-gray-500" aria-hidden="true"></div>
+          </label>
+
+          <label class="radio-color-swatch small" for="radio-color-small-3">
+            <input name="small-radio-color-selection-group" type="radio" id="radio-color-small-3"
+                   aria-label="dark gray"/>
+            <div class="bg-gray-700" aria-hidden="true"></div>
+          </label>
+
+          <label class="radio-color-swatch small" for="radio-color-small-4">
+            <input name="small-radio-color-selection-group" type="radio" id="radio-color-small-4" disabled
+                   aria-label="brown"/>
+            <div class="bg-brown-light" aria-hidden="true"></div>
+          </label>
+        </fieldset>
+      </div>
     </div>
 
   </div>
+
+  <div id="accordion-section" class="style-guide-section">
+    <h2 class="section-header">Accordions</h2>
+
+    <div class="js-view-source">
+      <ul id="demoAccordion1" class="accordion-controls">
+        <li>
+          <button class="accordion-trigger"
+                  aria-controls="accordion-panel-1"
+                  aria-expanded="false">
+            Accordion Panel 1 Title
+          </button>
+          <div id="accordion-panel-1"
+               class="accordion-panel"
+               aria-hidden="true">
+            <h3>Accordion Panel 1 Content</h3>
+            <p>the element <code>.accordion-panel</code> is a generic container which will accept any markup.</p>
+          </div>
+        </li>
+
+        <li>
+          <button class="accordion-trigger"
+                  aria-controls="accordion-panel-2"
+                  aria-expanded="false">
+            Accordion Panel 2 Title
+          </button>
+          <div id="accordion-panel-2"
+               class="accordion-panel"
+               aria-hidden="true">
+            <h3>Accordion Panel 2 Content</h3>
+            <p>the element <code>.accordion-panel</code> is a generic container which will accept any markup.</p>
+          </div>
+        </li>
+      </ul>
+      <script>
+        bindAccordionToggle('demoAccordion1');
+      </script>
+    </div>
+
+    <div class="js-view-source">
+      <ul id="demoAccordion2" class="accordion-controls accordion-gray">
+        <li>
+          <button class="accordion-trigger"
+                  aria-controls="accordion-gray-panel-1"
+                  aria-expanded="false">
+            <div>Accordion Panel 1 Title</div>
+            <span class="accordion-clear-button">Clear</span>
+          </button>
+          <div id="accordion-gray-panel-1"
+               class="accordion-panel"
+               aria-hidden="true">
+            <div class="accordion-panel-inner">
+              <h3>Accordion Panel 1 Content</h3>
+              <span>the element <code>.accordion-panel</code> is a generic container which will accept any markup.</span>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <button class="accordion-trigger"
+                  aria-controls="accordion-gray-panel-2"
+                  aria-expanded="false">
+            <div>Accordion Panel 2 Title</div>
+            <span class="accordion-clear-button">Clear</span>
+          </button>
+          <div id="accordion-gray-panel-2"
+               class="accordion-panel"
+               aria-hidden="true">
+            <div class="accordion-panel-inner">
+              <h3>Accordion Panel 1 Content</h3>
+              <span>the element <code>.accordion-panel</code> is a generic container which will accept any markup.</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <script>
+        bindAccordionToggle('demoAccordion2');
+      </script>
+    </div>
+  </div>
+
   <div id="iconography-section" class="style-guide-section">
     <h2 class="section-header">Iconography</h2>
     <p>Each individual icon in this set can be invoked by including an SVG element which references the icon's ID
@@ -669,6 +869,8 @@
         </svg>
       </xmp>
     </code>
+
+    <p>Icons are also available as variables which can be used in CSS <code>url</code>s. Look in _variables.scss for more info</p>
 
     <h3>24px Grid Icons</h3>
     <div class="iconography-container">
@@ -952,6 +1154,41 @@
         <span>icon-cart-brown</span>
       </div>
 
+      <div class="icon-container">
+        <svg width="24" height="24" viewBox="0 0 24 24" focusable="false">
+          <use xlink:href="#icon-x"/>
+          <span>icon-x</span>
+        </svg>
+      </div>
+
+      <div class="icon-container">
+        <svg width="24" height="24" viewBox="0 0 24 24" focusable="false">
+          <use xlink:href="#icon-plus"/>
+        </svg>
+        <span>icon-plus</span>
+      </div>
+
+      <div class="icon-container">
+        <svg width="24" height="24" viewBox="0 0 24 24" focusable="false">
+          <use xlink:href="#icon-minus"/>
+        </svg>
+        <span>icon-minus</span>
+      </div>
+
+      <div class="icon-container">
+        <svg width="24" height="24" viewBox="0 0 24 24" focusable="false">
+          <use xlink:href="#icon-arrow"/>
+        </svg>
+        <span>icon-arrow</span>
+      </div>
+
+      <div class="icon-container">
+        <svg width="24" height="24" viewBox="0 0 24 24" focusable="false">
+          <use xlink:href="#icon-x-outline"/>
+        </svg>
+        <span>icon-x-outline</span>
+      </div>
+
     </div>
 
     <h3>16px grid icons</h3>
@@ -1014,97 +1251,131 @@
 
     </div>
   </div>
-</div>
+
 </div>
 
 
 <!-- 24px icons -->
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <defs>
-    <path id="icon-zoom-in" fill="#333" fill-rule="evenodd" d="M11.293 0c-6.065 0-11 4.935-11 11s4.935 11 11 11c2.674 0 5.125-.961 7.034-2.552l4.259 4.259L24 22.293l-4.259-4.259A10.951 10.951 0 0 0 22.293 11c0-6.065-4.935-11-11-11zm0 2c4.963 0 9 4.038 9 9 0 4.963-4.037 9-9 9s-9-4.037-9-9c0-4.962 4.037-9 9-9zm-1 4v4h-4v2h4v4h2v-4h4v-2h-4V6h-2z"/>
+    <path id="icon-zoom-in" fill="#333" fill-rule="evenodd"
+          d="M11.293 0c-6.065 0-11 4.935-11 11s4.935 11 11 11c2.674 0 5.125-.961 7.034-2.552l4.259 4.259L24 22.293l-4.259-4.259A10.951 10.951 0 0 0 22.293 11c0-6.065-4.935-11-11-11zm0 2c4.963 0 9 4.038 9 9 0 4.963-4.037 9-9 9s-9-4.037-9-9c0-4.962 4.037-9 9-9zm-1 4v4h-4v2h4v4h2v-4h4v-2h-4V6h-2z"/>
 
-    <path id="icon-zoom-out" fill="#333" fill-rule="evenodd" d="M11.293 0c-6.065 0-11 4.935-11 11s4.935 11 11 11c2.674 0 5.125-.961 7.034-2.552l4.259 4.259L24 22.293l-4.259-4.259A10.951 10.951 0 0 0 22.293 11c0-6.065-4.935-11-11-11zm0 2c4.963 0 9 4.038 9 9 0 4.963-4.037 9-9 9s-9-4.037-9-9c0-4.962 4.037-9 9-9zm-5 8v2h10v-2h-10z"/>
+    <path id="icon-zoom-out" fill="#333" fill-rule="evenodd"
+          d="M11.293 0c-6.065 0-11 4.935-11 11s4.935 11 11 11c2.674 0 5.125-.961 7.034-2.552l4.259 4.259L24 22.293l-4.259-4.259A10.951 10.951 0 0 0 22.293 11c0-6.065-4.935-11-11-11zm0 2c4.963 0 9 4.038 9 9 0 4.963-4.037 9-9 9s-9-4.037-9-9c0-4.962 4.037-9 9-9zm-5 8v2h10v-2h-10z"/>
 
-    <path id="icon-view-visible" fill="#333" fill-rule="evenodd" d="M10.5 8a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m1.5 9c-3.989 0-7.606-3.189-9.338-5 .929-.971 2.401-2.334 4.18-3.393A5.455 5.455 0 0 0 6.5 10.5a5.5 5.5 0 0 0 11 0c0-.667-.125-1.302-.342-1.893 1.779 1.059 3.251 2.423 4.18 3.393-1.734 1.812-5.35 5-9.338 5m.648-11.958A5.524 5.524 0 0 0 12 5c-.22 0-.436.017-.648.042C5.027 5.474 0 12 0 12s5.373 7 12 7 12-7 12-7-5.027-6.526-11.352-6.958"/>
+    <path id="icon-view-visible" fill="#333" fill-rule="evenodd"
+          d="M10.5 8a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m1.5 9c-3.989 0-7.606-3.189-9.338-5 .929-.971 2.401-2.334 4.18-3.393A5.455 5.455 0 0 0 6.5 10.5a5.5 5.5 0 0 0 11 0c0-.667-.125-1.302-.342-1.893 1.779 1.059 3.251 2.423 4.18 3.393-1.734 1.812-5.35 5-9.338 5m.648-11.958A5.524 5.524 0 0 0 12 5c-.22 0-.436.017-.648.042C5.027 5.474 0 12 0 12s5.373 7 12 7 12-7 12-7-5.027-6.526-11.352-6.958"/>
 
-    <path id="icon-view-hidden" fill="#333" fill-rule="evenodd" d="M12 16.707c-1.039 0-2.052-.22-3.014-.572l.865-.865a5.5 5.5 0 0 0 7.649-5.063c0-.667-.125-1.302-.342-1.893 1.779 1.059 3.251 2.423 4.18 3.393-1.734 1.812-5.35 5-9.338 5m-9.338-5c.929-.971 2.401-2.334 4.18-3.393a5.478 5.478 0 0 0 1.314 5.823l-1.095 1.095c-1.877-1.075-3.432-2.515-4.399-3.525m7.838-4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m7.881-.967l5.326-5.326L22.293 0l-5.767 5.767c-1.209-.537-2.509-.925-3.878-1.018A5.524 5.524 0 0 0 12 4.707c-.22 0-.436.017-.648.042C5.027 5.181 0 11.707 0 11.707s2.243 2.908 5.61 4.976L.293 22l1.414 1.414 5.749-5.749c1.402.625 2.935 1.042 4.544 1.042 6.627 0 12-7 12-7s-2.248-2.904-5.619-4.967"/>
+    <path id="icon-view-hidden" fill="#333" fill-rule="evenodd"
+          d="M12 16.707c-1.039 0-2.052-.22-3.014-.572l.865-.865a5.5 5.5 0 0 0 7.649-5.063c0-.667-.125-1.302-.342-1.893 1.779 1.059 3.251 2.423 4.18 3.393-1.734 1.812-5.35 5-9.338 5m-9.338-5c.929-.971 2.401-2.334 4.18-3.393a5.478 5.478 0 0 0 1.314 5.823l-1.095 1.095c-1.877-1.075-3.432-2.515-4.399-3.525m7.838-4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3m7.881-.967l5.326-5.326L22.293 0l-5.767 5.767c-1.209-.537-2.509-.925-3.878-1.018A5.524 5.524 0 0 0 12 4.707c-.22 0-.436.017-.648.042C5.027 5.181 0 11.707 0 11.707s2.243 2.908 5.61 4.976L.293 22l1.414 1.414 5.749-5.749c1.402.625 2.935 1.042 4.544 1.042 6.627 0 12-7 12-7s-2.248-2.904-5.619-4.967"/>
 
-    <path id="icon-video" fill="#333" fill-rule="evenodd" d="M10 8l6 4-6 4V8zm2 14C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm0-22C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z"/>
+    <path id="icon-video" fill="#333" fill-rule="evenodd"
+          d="M10 8l6 4-6 4V8zm2 14C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm0-22C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z"/>
 
-    <path id="icon-trashcan" fill="#333" fill-rule="evenodd" d="M19.766 8L18.21 22H5.79L4.235 8h15.531zM4 24h16l2-18H2l2 18zm3-4h2V10H7v10zm8 0h2V10h-2v10zm-4 0h2V10h-2v10zM10 3h4V2h-4v1zm6 0V2a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v1H2v2h20V3h-6z"/>
+    <path id="icon-trashcan" fill="#333" fill-rule="evenodd"
+          d="M19.766 8L18.21 22H5.79L4.235 8h15.531zM4 24h16l2-18H2l2 18zm3-4h2V10H7v10zm8 0h2V10h-2v10zm-4 0h2V10h-2v10zM10 3h4V2h-4v1zm6 0V2a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v1H2v2h20V3h-6z"/>
 
     <g id="icon-tier-discount" fill="none" fill-rule="evenodd">
       <path fill="#FDB913" d="M23.79 3.536L20.255.001h-7.069L0 13.185l10.606 10.606 13.186-13.186z"/>
-      <path fill="#333" d="M19.792 5a1 1 0 1 1-1.999.001 1 1 0 0 1 2 0zm-5.11 6.7a2.326 2.326 0 0 1 0 3.347l-4.015 3.922a.11.11 0 0 1-.153 0l-4.01-3.926a2.33 2.33 0 0 1 0-3.35A2.44 2.44 0 0 1 8.214 11a2.44 2.44 0 0 1 1.712.692l.668.652.662-.645a2.44 2.44 0 0 1 1.712-.694c.62 0 1.238.231 1.712.694zm-4.076 9.264l-7.778-7.778L14.014 2l5.413.001 2.364 2.364.001 5.413-11.186 11.186zM23.79 3.536L20.255.001h-7.069L0 13.185l10.606 10.606 13.186-13.186-.002-7.07z"/>
+      <path fill="#333"
+            d="M19.792 5a1 1 0 1 1-1.999.001 1 1 0 0 1 2 0zm-5.11 6.7a2.326 2.326 0 0 1 0 3.347l-4.015 3.922a.11.11 0 0 1-.153 0l-4.01-3.926a2.33 2.33 0 0 1 0-3.35A2.44 2.44 0 0 1 8.214 11a2.44 2.44 0 0 1 1.712.692l.668.652.662-.645a2.44 2.44 0 0 1 1.712-.694c.62 0 1.238.231 1.712.694zm-4.076 9.264l-7.778-7.778L14.014 2l5.413.001 2.364 2.364.001 5.413-11.186 11.186zM23.79 3.536L20.255.001h-7.069L0 13.185l10.606 10.606 13.186-13.186-.002-7.07z"/>
     </g>
 
-    <path id="icon-sort" fill="#333" fill-rule="evenodd" d="M17.707 4.416V18.01l2.291-2.301 1.418 1.41-4.713 4.734-4.704-4.71 1.416-1.412 2.293 2.296V4.416h2zM6.704 3l4.713 4.732-1.417 1.411-2.292-2.3v13.595H5.708V6.826L3.415 9.122 2 7.709 6.703 3z"/>
+    <path id="icon-sort" fill="#333" fill-rule="evenodd"
+          d="M17.707 4.416V18.01l2.291-2.301 1.418 1.41-4.713 4.734-4.704-4.71 1.416-1.412 2.293 2.296V4.416h2zM6.704 3l4.713 4.732-1.417 1.411-2.292-2.3v13.595H5.708V6.826L3.415 9.122 2 7.709 6.703 3z"/>
 
-    <path id="icon-share" fill="#333" fill-rule="evenodd" d="M21.117 21.658A1.984 1.984 0 0 1 20 22c-1.103 0-2-.898-2-2a1.997 1.997 0 0 1 3.658-1.117 2 2 0 0 1-.541 2.775M2 12c0-1.103.448-2.103 1.173-2.827A3.99 3.99 0 0 1 6 8a4.004 4.004 0 0 1 3.685 5.555c-.203.478-.496.91-.858 1.272a3.991 3.991 0 0 1-4.383.858 4.024 4.024 0 0 1-2.13-2.13A3.987 3.987 0 0 1 2 12m19.117-9.658c.213.144.396.328.541.541A2 2 0 1 1 18 4a1.997 1.997 0 0 1 3.117-1.658M20 16c-.279 0-.552.03-.816.084-.035.007-.066.023-.1.031a4 4 0 0 0-.663.211c-.008.004-.016.01-.025.013a4.005 4.005 0 0 0-1.258.874l-5.51-3.149c.116-.317.208-.645.27-.984.003-.017.004-.035.008-.052A6.01 6.01 0 0 0 12 12a6.01 6.01 0 0 0-.094-1.028c-.004-.017-.005-.035-.009-.053a5.893 5.893 0 0 0-.269-.983l5.51-3.149c.357.367.783.664 1.258.873.01.004.016.01.025.014.212.09.434.157.663.211.034.007.065.023.1.031A4 4 0 1 0 16 4c0 .213.026.418.062.62.023.145.055.285.093.425L10.64 8.197a6.05 6.05 0 0 0-.425-.466c-.03-.03-.064-.056-.094-.085a5.907 5.907 0 0 0-.366-.323c-.054-.043-.11-.082-.165-.123a5.678 5.678 0 0 0-.337-.238c-.065-.042-.132-.08-.198-.12a5.672 5.672 0 0 0-.916-.443 6.555 6.555 0 0 0-.234-.086 6.625 6.625 0 0 0-.379-.11c-.078-.02-.154-.043-.234-.06a5.999 5.999 0 0 0-.429-.074c-.069-.01-.137-.024-.207-.032a6 6 0 1 0 0 11.926c.07-.008.138-.022.207-.032.145-.02.288-.044.43-.074.08-.017.155-.04.233-.06.128-.034.255-.069.38-.11.078-.028.155-.057.233-.087a6.124 6.124 0 0 0 .575-.254c.116-.059.23-.122.341-.188.066-.04.133-.079.198-.12.116-.075.227-.156.337-.238.054-.04.111-.08.165-.123.126-.102.247-.21.365-.322.03-.03.064-.056.095-.087.15-.147.292-.302.425-.465l5.516 3.151a4.09 4.09 0 0 0-.093.426A3.512 3.512 0 0 0 16 20a3.978 3.978 0 0 0 1.172 2.828A4.003 4.003 0 0 0 20 24a4 4 0 0 0 0-8"/>
+    <path id="icon-share" fill="#333" fill-rule="evenodd"
+          d="M21.117 21.658A1.984 1.984 0 0 1 20 22c-1.103 0-2-.898-2-2a1.997 1.997 0 0 1 3.658-1.117 2 2 0 0 1-.541 2.775M2 12c0-1.103.448-2.103 1.173-2.827A3.99 3.99 0 0 1 6 8a4.004 4.004 0 0 1 3.685 5.555c-.203.478-.496.91-.858 1.272a3.991 3.991 0 0 1-4.383.858 4.024 4.024 0 0 1-2.13-2.13A3.987 3.987 0 0 1 2 12m19.117-9.658c.213.144.396.328.541.541A2 2 0 1 1 18 4a1.997 1.997 0 0 1 3.117-1.658M20 16c-.279 0-.552.03-.816.084-.035.007-.066.023-.1.031a4 4 0 0 0-.663.211c-.008.004-.016.01-.025.013a4.005 4.005 0 0 0-1.258.874l-5.51-3.149c.116-.317.208-.645.27-.984.003-.017.004-.035.008-.052A6.01 6.01 0 0 0 12 12a6.01 6.01 0 0 0-.094-1.028c-.004-.017-.005-.035-.009-.053a5.893 5.893 0 0 0-.269-.983l5.51-3.149c.357.367.783.664 1.258.873.01.004.016.01.025.014.212.09.434.157.663.211.034.007.065.023.1.031A4 4 0 1 0 16 4c0 .213.026.418.062.62.023.145.055.285.093.425L10.64 8.197a6.05 6.05 0 0 0-.425-.466c-.03-.03-.064-.056-.094-.085a5.907 5.907 0 0 0-.366-.323c-.054-.043-.11-.082-.165-.123a5.678 5.678 0 0 0-.337-.238c-.065-.042-.132-.08-.198-.12a5.672 5.672 0 0 0-.916-.443 6.555 6.555 0 0 0-.234-.086 6.625 6.625 0 0 0-.379-.11c-.078-.02-.154-.043-.234-.06a5.999 5.999 0 0 0-.429-.074c-.069-.01-.137-.024-.207-.032a6 6 0 1 0 0 11.926c.07-.008.138-.022.207-.032.145-.02.288-.044.43-.074.08-.017.155-.04.233-.06.128-.034.255-.069.38-.11.078-.028.155-.057.233-.087a6.124 6.124 0 0 0 .575-.254c.116-.059.23-.122.341-.188.066-.04.133-.079.198-.12.116-.075.227-.156.337-.238.054-.04.111-.08.165-.123.126-.102.247-.21.365-.322.03-.03.064-.056.095-.087.15-.147.292-.302.425-.465l5.516 3.151a4.09 4.09 0 0 0-.093.426A3.512 3.512 0 0 0 16 20a3.978 3.978 0 0 0 1.172 2.828A4.003 4.003 0 0 0 20 24a4 4 0 0 0 0-8"/>
 
     <g id="icon-search" fill="none" fill-rule="evenodd">
       <path fill="#FAB616" d="M21.418 18.125l-3.04 2.925-5.85-6.08 3.04-2.925z"/>
-      <path fill="#333" d="M13.942 14.998l1.599-1.539 4.463 4.639-1.598 1.538-4.464-4.638zm-5.71-3.374a4.284 4.284 0 0 1-3.025-1.322 4.317 4.317 0 0 1 .116-6.099 4.297 4.297 0 0 1 2.99-1.204c1.133 0 2.264.442 3.109 1.321a4.287 4.287 0 0 1 1.206 3.074 4.29 4.29 0 0 1-1.323 3.025 4.3 4.3 0 0 1-3.073 1.205zm7.363-.993l-1.52 1.463-.824-.856a6.268 6.268 0 0 0 1.377-3.806 6.276 6.276 0 0 0-1.764-4.499 6.321 6.321 0 0 0-8.928-.171A6.272 6.272 0 0 0 2.002 7.19a6.27 6.27 0 0 0 1.763 4.499 6.272 6.272 0 0 0 4.553 1.936 6.264 6.264 0 0 0 3.459-1.035l.856.891-1.52 1.462 7.238 7.521 4.482-4.312-7.238-7.521z"/>
+      <path fill="#333"
+            d="M13.942 14.998l1.599-1.539 4.463 4.639-1.598 1.538-4.464-4.638zm-5.71-3.374a4.284 4.284 0 0 1-3.025-1.322 4.317 4.317 0 0 1 .116-6.099 4.297 4.297 0 0 1 2.99-1.204c1.133 0 2.264.442 3.109 1.321a4.287 4.287 0 0 1 1.206 3.074 4.29 4.29 0 0 1-1.323 3.025 4.3 4.3 0 0 1-3.073 1.205zm7.363-.993l-1.52 1.463-.824-.856a6.268 6.268 0 0 0 1.377-3.806 6.276 6.276 0 0 0-1.764-4.499 6.321 6.321 0 0 0-8.928-.171A6.272 6.272 0 0 0 2.002 7.19a6.27 6.27 0 0 0 1.763 4.499 6.272 6.272 0 0 0 4.553 1.936 6.264 6.264 0 0 0 3.459-1.035l.856.891-1.52 1.462 7.238 7.521 4.482-4.312-7.238-7.521z"/>
     </g>
 
-    <path id="icon-print" fill="#333" fill-rule="evenodd" d="M8 20h8v-2H8v2zm0-3h8v-2H8v2zm14-9H2v8h2v-4h16v4h2V8zM6 21h12v-7H6v7zM6 6h12V3H6v3zm18 2v10h-4v5H4v-5H0V8a2 2 0 0 1 2-2h2V1h16v5h2a2 2 0 0 1 2 2zm-4 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+    <path id="icon-print" fill="#333" fill-rule="evenodd"
+          d="M8 20h8v-2H8v2zm0-3h8v-2H8v2zm14-9H2v8h2v-4h16v4h2V8zM6 21h12v-7H6v7zM6 6h12V3H6v3zm18 2v10h-4v5H4v-5H0V8a2 2 0 0 1 2-2h2V1h16v5h2a2 2 0 0 1 2 2zm-4 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
 
     <g id="icon-personalize" fill="none" fill-rule="evenodd">
       <circle cx="12" cy="12" r="9" fill="#FDB913"/>
-      <path fill="#222" d="M14 15h-4v-2h4a1.001 1.001 0 0 1 0 2zm-4-6h3a1.001 1.001 0 0 1 0 2h-3V9zm5.6 2.47c.248-.436.4-.933.4-1.47a3 3 0 0 0-3-3H8v10h6a3 3 0 0 0 3-3 2.992 2.992 0 0 0-1.4-2.53zM12 20a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm10-8c0-.385-.027-.764-.069-1.138l1.829-1.254a11.916 11.916 0 0 0-.851-2.586l-2.207.062a9.964 9.964 0 0 0-1.34-1.834l.742-2.083a12.037 12.037 0 0 0-2.202-1.608l-1.754 1.35a9.854 9.854 0 0 0-2.164-.71L13.361.083C12.914.032 12.461 0 12 0c-.461 0-.914.032-1.361.083l-.623 2.116a9.854 9.854 0 0 0-2.164.71l-1.754-1.35c-.797.451-1.532.994-2.202 1.608l.742 2.083a9.964 9.964 0 0 0-1.34 1.834l-2.207-.062A11.916 11.916 0 0 0 .24 9.608l1.829 1.254C2.027 11.236 2 11.615 2 12c0 .385.027.764.069 1.138L.24 14.392c.183.904.477 1.767.851 2.586l2.207-.062a9.964 9.964 0 0 0 1.34 1.834l-.742 2.083c.67.614 1.405 1.157 2.202 1.608l1.754-1.35a9.854 9.854 0 0 0 2.164.71l.623 2.116c.447.051.9.083 1.361.083.461 0 .914-.032 1.361-.083l.623-2.116a9.854 9.854 0 0 0 2.164-.71l1.754 1.35a12.037 12.037 0 0 0 2.202-1.608l-.742-2.083a9.964 9.964 0 0 0 1.34-1.834l2.207.062c.374-.819.668-1.682.851-2.586l-1.829-1.254c.042-.374.069-.753.069-1.138z"/>
+      <path fill="#222"
+            d="M14 15h-4v-2h4a1.001 1.001 0 0 1 0 2zm-4-6h3a1.001 1.001 0 0 1 0 2h-3V9zm5.6 2.47c.248-.436.4-.933.4-1.47a3 3 0 0 0-3-3H8v10h6a3 3 0 0 0 3-3 2.992 2.992 0 0 0-1.4-2.53zM12 20a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm10-8c0-.385-.027-.764-.069-1.138l1.829-1.254a11.916 11.916 0 0 0-.851-2.586l-2.207.062a9.964 9.964 0 0 0-1.34-1.834l.742-2.083a12.037 12.037 0 0 0-2.202-1.608l-1.754 1.35a9.854 9.854 0 0 0-2.164-.71L13.361.083C12.914.032 12.461 0 12 0c-.461 0-.914.032-1.361.083l-.623 2.116a9.854 9.854 0 0 0-2.164.71l-1.754-1.35c-.797.451-1.532.994-2.202 1.608l.742 2.083a9.964 9.964 0 0 0-1.34 1.834l-2.207-.062A11.916 11.916 0 0 0 .24 9.608l1.829 1.254C2.027 11.236 2 11.615 2 12c0 .385.027.764.069 1.138L.24 14.392c.183.904.477 1.767.851 2.586l2.207-.062a9.964 9.964 0 0 0 1.34 1.834l-.742 2.083c.67.614 1.405 1.157 2.202 1.608l1.754-1.35a9.854 9.854 0 0 0 2.164.71l.623 2.116c.447.051.9.083 1.361.083.461 0 .914-.032 1.361-.083l.623-2.116a9.854 9.854 0 0 0 2.164-.71l1.754 1.35a12.037 12.037 0 0 0 2.202-1.608l-.742-2.083a9.964 9.964 0 0 0 1.34-1.834l2.207.062c.374-.819.668-1.682.851-2.586l-1.829-1.254c.042-.374.069-.753.069-1.138z"/>
     </g>
 
-    <path id="icon-pdf" fill="#333" fill-rule="evenodd" d="M2 0v24h20V7l-7-7H2zm2 2.001h9V9h7v13.001H4v-20zm11 .828L19.172 7H15V2.829zM6 14h12.001v-2H6v2zm0 4h12.001v-2H6v2z"/>
+    <path id="icon-pdf" fill="#333" fill-rule="evenodd"
+          d="M2 0v24h20V7l-7-7H2zm2 2.001h9V9h7v13.001H4v-20zm11 .828L19.172 7H15V2.829zM6 14h12.001v-2H6v2zm0 4h12.001v-2H6v2z"/>
 
     <g id="icon-location" fill="none" fill-rule="evenodd">
       <path fill="#FDB913" d="M15 9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-      <path fill="#333" d="M12 1a8 8 0 0 1 8 8c0 8-8 14-8 14S4 16 4 9a8 8 0 0 1 8-8zm0 2C8.691 3 6 5.691 6 9c0 4.451 3.99 9.142 6.078 11.292C14.148 18.352 18 14.057 18 9c0-3.309-2.692-6-6-6zm0 2c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4zm0 2c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2z"/>
+      <path fill="#333"
+            d="M12 1a8 8 0 0 1 8 8c0 8-8 14-8 14S4 16 4 9a8 8 0 0 1 8-8zm0 2C8.691 3 6 5.691 6 9c0 4.451 3.99 9.142 6.078 11.292C14.148 18.352 18 14.057 18 9c0-3.309-2.692-6-6-6zm0 2c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4zm0 2c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2z"/>
     </g>
 
-    <path id="icon-help" fill="#333" fill-rule="evenodd" d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm0 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-.204 15.427c.716 0 1.27.554 1.27 1.269 0 .715-.532 1.27-1.27 1.27-.74 0-1.27-.532-1.27-1.27 0-.74.555-1.27 1.27-1.27zm.946-12.462c2.516 0 4.154 1.592 4.154 3.923 0 1.684-.623 2.723-2.1 3.462-1.384.692-2.353 1.015-2.353 2.261 0 .37.07.6.07.715 0 .185-.07.255-.233.255h-1.592c-.3 0-.323-.347-.323-1.293 0-1.316.601-2.193 1.94-2.862 1.522-.784 2.513-1.176 2.513-2.538a2.067 2.067 0 0 0-2.076-2.077h-.877c-1.06 0-1.385.6-1.916 1.293-.068.092-.114.138-.207.138-.023 0-.069 0-.115-.023l-1.454-.738c-.092-.047-.138-.093-.138-.162 0-.854 1.545-2.354 3.83-2.354z"/>
+    <path id="icon-help" fill="#333" fill-rule="evenodd"
+          d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm0 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-.204 15.427c.716 0 1.27.554 1.27 1.269 0 .715-.532 1.27-1.27 1.27-.74 0-1.27-.532-1.27-1.27 0-.74.555-1.27 1.27-1.27zm.946-12.462c2.516 0 4.154 1.592 4.154 3.923 0 1.684-.623 2.723-2.1 3.462-1.384.692-2.353 1.015-2.353 2.261 0 .37.07.6.07.715 0 .185-.07.255-.233.255h-1.592c-.3 0-.323-.347-.323-1.293 0-1.316.601-2.193 1.94-2.862 1.522-.784 2.513-1.176 2.513-2.538a2.067 2.067 0 0 0-2.076-2.077h-.877c-1.06 0-1.385.6-1.916 1.293-.068.092-.114.138-.207.138-.023 0-.069 0-.115-.023l-1.454-.738c-.092-.047-.138-.093-.138-.162 0-.854 1.545-2.354 3.83-2.354z"/>
 
-    <path id="icon-email" fill="#333" fill-rule="evenodd" d="M0 21h24V3H0v18zM2.699 7L2 6.491V5h20v1.491L21.301 7 12 13.764 2.699 7zm16.808 3.777L22 8.963v6.801l-2.493-4.987zM2 8.963l2.493 1.814L2 15.764V8.963zm15.867 3.006L21.382 19H2.618l3.515-7.031L12 16.236l5.867-4.267z"/>
+    <path id="icon-email" fill="#333" fill-rule="evenodd"
+          d="M0 21h24V3H0v18zM2.699 7L2 6.491V5h20v1.491L21.301 7 12 13.764 2.699 7zm16.808 3.777L22 8.963v6.801l-2.493-4.987zM2 8.963l2.493 1.814L2 15.764V8.963zm15.867 3.006L21.382 19H2.618l3.515-7.031L12 16.236l5.867-4.267z"/>
 
-    <path id="icon-ellipsis" fill="#333" fill-rule="evenodd" d="M12 10a2 2 0 1 0 .001 4.001A2 2 0 0 0 12 10m8 0a2 2 0 1 0 .001 4.001A2 2 0 0 0 20 10M6 12a2 2 0 1 1-4.001-.001A2 2 0 0 1 6 12"/>
+    <path id="icon-ellipsis" fill="#333" fill-rule="evenodd"
+          d="M12 10a2 2 0 1 0 .001 4.001A2 2 0 0 0 12 10m8 0a2 2 0 1 0 .001 4.001A2 2 0 0 0 20 10M6 12a2 2 0 1 1-4.001-.001A2 2 0 0 1 6 12"/>
 
-    <path id="icon-edit" fill="#333" fill-rule="evenodd" d="M19.092 23.452h3v-2h-3v2zm-9-2h8v2h-10l2-2zM20.293 6.24l-2.08-2.08 1.157-1.157a.53.53 0 0 1 .283.16l1.637 1.636c.113.114.15.225.159.284L20.293 6.24zM5.757 20.774l-2.413.334.334-2.413L16.799 5.573l2.08 2.08L5.757 20.774zm16.947-17.39l-1.636-1.636C20.573 1.253 19.94 1 19.34 1c-.496 0-.969.173-1.322.526l-16.23 16.23L1 23.451l5.696-.789 16.23-16.229c.781-.78.681-2.147-.222-3.05z"/>
+    <path id="icon-edit" fill="#333" fill-rule="evenodd"
+          d="M19.092 23.452h3v-2h-3v2zm-9-2h8v2h-10l2-2zM20.293 6.24l-2.08-2.08 1.157-1.157a.53.53 0 0 1 .283.16l1.637 1.636c.113.114.15.225.159.284L20.293 6.24zM5.757 20.774l-2.413.334.334-2.413L16.799 5.573l2.08 2.08L5.757 20.774zm16.947-17.39l-1.636-1.636C20.573 1.253 19.94 1 19.34 1c-.496 0-.969.173-1.322.526l-16.23 16.23L1 23.451l5.696-.789 16.23-16.229c.781-.78.681-2.147-.222-3.05z"/>
 
     <g id="icon-chat" fill="none" fill-rule="evenodd">
       <path fill="#333" d="M0 1v18.26h15.963l8.385 4.792V1H0zm2.029 2.029h20.29v17.527l-5.817-3.324H2.029V3.029z"/>
-      <path fill="#FAB616" d="M5.072 7.087h14.203V5.058H5.072zM5.072 11.145h14.203V9.116H5.072zM5.072 15.203h10.145v-2.029H5.072z"/>
+      <path fill="#FAB616"
+            d="M5.072 7.087h14.203V5.058H5.072zM5.072 11.145h14.203V9.116H5.072zM5.072 15.203h10.145v-2.029H5.072z"/>
     </g>
 
     <g id="icon-account-yellow" fill="none" fill-rule="evenodd">
       <path fill="#FDB913" d="M5 20a7 7 0 1 1 14 0s-2 3-7 3-7-3-7-3"/>
-      <path fill="#333" d="M2 12C2 6.486 6.486 2 12 2s10 4.486 10 10c0 2.361-.827 4.53-2.201 6.243a8.02 8.02 0 0 0-4.8-5.654c.919-1.008 1.501-2.465 1.501-4.089C16.5 5.724 14.775 4 12 4S7.5 5.724 7.5 8.5c0 1.624.582 3.081 1.501 4.089a8.02 8.02 0 0 0-4.8 5.654A9.946 9.946 0 0 1 2 12m7.5-3.5c0-1.659.841-2.5 2.5-2.5s2.5.841 2.5 2.5c0 1.897-1.145 3.5-2.5 3.5s-2.5-1.603-2.5-3.5m5.586 13.007c-.076.026-.159.05-.238.075a9.94 9.94 0 0 1-.773.198c-.074.016-.153.028-.229.042A10.021 10.021 0 0 1 12 22c-.393 0-.754-.028-1.104-.064a10.349 10.349 0 0 1-.75-.115c-.072-.013-.147-.025-.216-.039a10.113 10.113 0 0 1-.784-.202c-.075-.023-.151-.045-.223-.069-.156-.051-.308-.111-.461-.169-1.337-.55-2.127-1.3-2.453-1.675A6.009 6.009 0 0 1 12 14a6.009 6.009 0 0 1 5.991 5.667c-.322.371-1.112 1.124-2.456 1.676-.149.056-.297.115-.449.164m1.278 1.66C20.827 21.416 24 17.076 24 12c0-6.617-5.383-12-12-12S0 5.383 0 12c0 5.076 3.173 9.416 7.636 11.167.85.357 1.874.64 3.08.762.031.003.062.008.094.01.38.036.773.061 1.19.061.417 0 .81-.025 1.19-.061.032-.002.063-.007.094-.01a10.71 10.71 0 0 0 3.08-.762"/>
+      <path fill="#333"
+            d="M2 12C2 6.486 6.486 2 12 2s10 4.486 10 10c0 2.361-.827 4.53-2.201 6.243a8.02 8.02 0 0 0-4.8-5.654c.919-1.008 1.501-2.465 1.501-4.089C16.5 5.724 14.775 4 12 4S7.5 5.724 7.5 8.5c0 1.624.582 3.081 1.501 4.089a8.02 8.02 0 0 0-4.8 5.654A9.946 9.946 0 0 1 2 12m7.5-3.5c0-1.659.841-2.5 2.5-2.5s2.5.841 2.5 2.5c0 1.897-1.145 3.5-2.5 3.5s-2.5-1.603-2.5-3.5m5.586 13.007c-.076.026-.159.05-.238.075a9.94 9.94 0 0 1-.773.198c-.074.016-.153.028-.229.042A10.021 10.021 0 0 1 12 22c-.393 0-.754-.028-1.104-.064a10.349 10.349 0 0 1-.75-.115c-.072-.013-.147-.025-.216-.039a10.113 10.113 0 0 1-.784-.202c-.075-.023-.151-.045-.223-.069-.156-.051-.308-.111-.461-.169-1.337-.55-2.127-1.3-2.453-1.675A6.009 6.009 0 0 1 12 14a6.009 6.009 0 0 1 5.991 5.667c-.322.371-1.112 1.124-2.456 1.676-.149.056-.297.115-.449.164m1.278 1.66C20.827 21.416 24 17.076 24 12c0-6.617-5.383-12-12-12S0 5.383 0 12c0 5.076 3.173 9.416 7.636 11.167.85.357 1.874.64 3.08.762.031.003.062.008.094.01.38.036.773.061 1.19.061.417 0 .81-.025 1.19-.061.032-.002.063-.007.094-.01a10.71 10.71 0 0 0 3.08-.762"/>
     </g>
 
-    <path id="icon-account" fill="#333" fill-rule="evenodd" d="M2 12C2 6.486 6.486 2 12 2s10 4.486 10 10c0 2.361-.827 4.53-2.201 6.243a8.02 8.02 0 0 0-4.8-5.654c.919-1.008 1.501-2.465 1.501-4.089C16.5 5.724 14.775 4 12 4S7.5 5.724 7.5 8.5c0 1.624.582 3.081 1.501 4.089a8.02 8.02 0 0 0-4.8 5.654A9.946 9.946 0 0 1 2 12m7.5-3.5c0-1.659.841-2.5 2.5-2.5s2.5.841 2.5 2.5c0 1.897-1.145 3.5-2.5 3.5s-2.5-1.603-2.5-3.5m5.586 13.007c-.076.026-.159.05-.238.075a9.94 9.94 0 0 1-.773.198c-.074.016-.153.028-.229.042A10.021 10.021 0 0 1 12 22c-.393 0-.754-.028-1.104-.064a10.349 10.349 0 0 1-.75-.115c-.072-.013-.147-.025-.216-.039a10.113 10.113 0 0 1-.784-.202c-.075-.023-.151-.045-.223-.069-.156-.051-.308-.111-.461-.169-1.337-.55-2.127-1.3-2.453-1.675A6.009 6.009 0 0 1 12 14a6.009 6.009 0 0 1 5.991 5.667c-.322.371-1.112 1.124-2.456 1.676-.149.056-.297.115-.449.164m1.278 1.66C20.827 21.416 24 17.076 24 12c0-6.617-5.383-12-12-12S0 5.383 0 12c0 5.076 3.173 9.416 7.636 11.167.85.357 1.874.64 3.08.762.031.003.062.008.094.01.38.036.773.061 1.19.061.417 0 .81-.025 1.19-.061.032-.002.063-.007.094-.01a10.71 10.71 0 0 0 3.08-.762"/>
+    <path id="icon-account" fill="#333" fill-rule="evenodd"
+          d="M2 12C2 6.486 6.486 2 12 2s10 4.486 10 10c0 2.361-.827 4.53-2.201 6.243a8.02 8.02 0 0 0-4.8-5.654c.919-1.008 1.501-2.465 1.501-4.089C16.5 5.724 14.775 4 12 4S7.5 5.724 7.5 8.5c0 1.624.582 3.081 1.501 4.089a8.02 8.02 0 0 0-4.8 5.654A9.946 9.946 0 0 1 2 12m7.5-3.5c0-1.659.841-2.5 2.5-2.5s2.5.841 2.5 2.5c0 1.897-1.145 3.5-2.5 3.5s-2.5-1.603-2.5-3.5m5.586 13.007c-.076.026-.159.05-.238.075a9.94 9.94 0 0 1-.773.198c-.074.016-.153.028-.229.042A10.021 10.021 0 0 1 12 22c-.393 0-.754-.028-1.104-.064a10.349 10.349 0 0 1-.75-.115c-.072-.013-.147-.025-.216-.039a10.113 10.113 0 0 1-.784-.202c-.075-.023-.151-.045-.223-.069-.156-.051-.308-.111-.461-.169-1.337-.55-2.127-1.3-2.453-1.675A6.009 6.009 0 0 1 12 14a6.009 6.009 0 0 1 5.991 5.667c-.322.371-1.112 1.124-2.456 1.676-.149.056-.297.115-.449.164m1.278 1.66C20.827 21.416 24 17.076 24 12c0-6.617-5.383-12-12-12S0 5.383 0 12c0 5.076 3.173 9.416 7.636 11.167.85.357 1.874.64 3.08.762.031.003.062.008.094.01.38.036.773.061 1.19.061.417 0 .81-.025 1.19-.061.032-.002.063-.007.094-.01a10.71 10.71 0 0 0 3.08-.762"/>
 
     <g id="icon-account-brown" fill="none" fill-rule="evenodd">
       <path fill="#975F20" d="M5 20a7 7 0 1 1 14 0s-2 3-7 3-7-3-7-3"/>
-      <path fill="#333" d="M2 12C2 6.486 6.486 2 12 2s10 4.486 10 10c0 2.361-.827 4.53-2.201 6.243a8.02 8.02 0 0 0-4.8-5.654c.919-1.008 1.501-2.465 1.501-4.089C16.5 5.724 14.775 4 12 4S7.5 5.724 7.5 8.5c0 1.624.582 3.081 1.501 4.089a8.02 8.02 0 0 0-4.8 5.654A9.946 9.946 0 0 1 2 12m7.5-3.5c0-1.659.841-2.5 2.5-2.5s2.5.841 2.5 2.5c0 1.897-1.145 3.5-2.5 3.5s-2.5-1.603-2.5-3.5m5.586 13.007c-.076.026-.159.05-.238.075a9.94 9.94 0 0 1-.773.198c-.074.016-.153.028-.229.042A10.021 10.021 0 0 1 12 22c-.393 0-.754-.028-1.104-.064a10.349 10.349 0 0 1-.75-.115c-.072-.013-.147-.025-.216-.039a10.113 10.113 0 0 1-.784-.202c-.075-.023-.151-.045-.223-.069-.156-.051-.308-.111-.461-.169-1.337-.55-2.127-1.3-2.453-1.675A6.009 6.009 0 0 1 12 14a6.009 6.009 0 0 1 5.991 5.667c-.322.371-1.112 1.124-2.456 1.676-.149.056-.297.115-.449.164m1.278 1.66C20.827 21.416 24 17.076 24 12c0-6.617-5.383-12-12-12S0 5.383 0 12c0 5.076 3.173 9.416 7.636 11.167.85.357 1.874.64 3.08.762.031.003.062.008.094.01.38.036.773.061 1.19.061.417 0 .81-.025 1.19-.061.032-.002.063-.007.094-.01a10.71 10.71 0 0 0 3.08-.762"/>
+      <path fill="#333"
+            d="M2 12C2 6.486 6.486 2 12 2s10 4.486 10 10c0 2.361-.827 4.53-2.201 6.243a8.02 8.02 0 0 0-4.8-5.654c.919-1.008 1.501-2.465 1.501-4.089C16.5 5.724 14.775 4 12 4S7.5 5.724 7.5 8.5c0 1.624.582 3.081 1.501 4.089a8.02 8.02 0 0 0-4.8 5.654A9.946 9.946 0 0 1 2 12m7.5-3.5c0-1.659.841-2.5 2.5-2.5s2.5.841 2.5 2.5c0 1.897-1.145 3.5-2.5 3.5s-2.5-1.603-2.5-3.5m5.586 13.007c-.076.026-.159.05-.238.075a9.94 9.94 0 0 1-.773.198c-.074.016-.153.028-.229.042A10.021 10.021 0 0 1 12 22c-.393 0-.754-.028-1.104-.064a10.349 10.349 0 0 1-.75-.115c-.072-.013-.147-.025-.216-.039a10.113 10.113 0 0 1-.784-.202c-.075-.023-.151-.045-.223-.069-.156-.051-.308-.111-.461-.169-1.337-.55-2.127-1.3-2.453-1.675A6.009 6.009 0 0 1 12 14a6.009 6.009 0 0 1 5.991 5.667c-.322.371-1.112 1.124-2.456 1.676-.149.056-.297.115-.449.164m1.278 1.66C20.827 21.416 24 17.076 24 12c0-6.617-5.383-12-12-12S0 5.383 0 12c0 5.076 3.173 9.416 7.636 11.167.85.357 1.874.64 3.08.762.031.003.062.008.094.01.38.036.773.061 1.19.061.417 0 .81-.025 1.19-.061.032-.002.063-.007.094-.01a10.71 10.71 0 0 0 3.08-.762"/>
     </g>
 
-    <path id="icon-360" fill="#333" fill-rule="evenodd" d="M24 10.474C24 7.35 18.835 5 12 5S0 7.35 0 10.474c0 1.814 1.67 3.391 4.701 4.403.526.178 1.113-.09 1.299-.595.031-.059.031-.149.062-.208a.966.966 0 0 0-.68-1.041c-2.011-.685-3.341-1.696-3.341-2.559 0-1.458 3.773-3.51 9.928-3.51 6.155 0 9.927 2.052 9.927 3.51 0 1.071-1.885 2.32-5.041 3.034l1.578-1.308c.433-.357.463-.982.092-1.399-.371-.416-1.02-.446-1.453-.089l-4.33 3.599a.922.922 0 0 0-.309.447.735.735 0 0 0-.031.446c.062.327.309.625.65.744l5.319 1.993c.124.059.247.059.371.059.403 0 .805-.237.959-.624.217-.506-.061-1.071-.588-1.279l-1.824-.685C21.433 14.52 24 12.705 24 10.474"/>
+    <path id="icon-360" fill="#333" fill-rule="evenodd"
+          d="M24 10.474C24 7.35 18.835 5 12 5S0 7.35 0 10.474c0 1.814 1.67 3.391 4.701 4.403.526.178 1.113-.09 1.299-.595.031-.059.031-.149.062-.208a.966.966 0 0 0-.68-1.041c-2.011-.685-3.341-1.696-3.341-2.559 0-1.458 3.773-3.51 9.928-3.51 6.155 0 9.927 2.052 9.927 3.51 0 1.071-1.885 2.32-5.041 3.034l1.578-1.308c.433-.357.463-.982.092-1.399-.371-.416-1.02-.446-1.453-.089l-4.33 3.599a.922.922 0 0 0-.309.447.735.735 0 0 0-.031.446c.062.327.309.625.65.744l5.319 1.993c.124.059.247.059.371.059.403 0 .805-.237.959-.624.217-.506-.061-1.071-.588-1.279l-1.824-.685C21.433 14.52 24 12.705 24 10.474"/>
 
-    <path id="icon-youtube" fill="#333" fill-rule="evenodd" d="M9.497 15.117V8.372l6.47 3.384-6.47 3.361zM23.71 7.205s-.234-1.655-.954-2.382c-.913-.956-1.933-.96-2.4-1.017-3.35-.244-8.38-.244-8.38-.244h-.009s-5.029 0-8.379.244c-.468.056-1.487.061-2.4 1.017-.72.727-.95 2.382-.95 2.382S0 9.145 0 11.09v1.818c0 1.941.239 3.886.239 3.886s.234 1.655.95 2.382c.912.956 2.11.923 2.643 1.026 1.918.183 8.145.24 8.145.24s5.034-.01 8.383-.25c.468-.056 1.488-.06 2.4-1.016.72-.727.955-2.382.955-2.382s.238-1.94.238-3.886v-1.818c-.004-1.941-.243-3.886-.243-3.886z"/>
+    <path id="icon-youtube" fill="#333" fill-rule="evenodd"
+          d="M9.497 15.117V8.372l6.47 3.384-6.47 3.361zM23.71 7.205s-.234-1.655-.954-2.382c-.913-.956-1.933-.96-2.4-1.017-3.35-.244-8.38-.244-8.38-.244h-.009s-5.029 0-8.379.244c-.468.056-1.487.061-2.4 1.017-.72.727-.95 2.382-.95 2.382S0 9.145 0 11.09v1.818c0 1.941.239 3.886.239 3.886s.234 1.655.95 2.382c.912.956 2.11.923 2.643 1.026 1.918.183 8.145.24 8.145.24s5.034-.01 8.383-.25c.468-.056 1.488-.06 2.4-1.016.72-.727.955-2.382.955-2.382s.238-1.94.238-3.886v-1.818c-.004-1.941-.243-3.886-.243-3.886z"/>
 
-    <path id="icon-twitter" fill="#333" fill-rule="evenodd" d="M24 5.306a9.708 9.708 0 0 1-2.826.774 4.952 4.952 0 0 0 2.165-2.724 9.899 9.899 0 0 1-3.126 1.196A4.923 4.923 0 0 0 16.62 3a4.92 4.92 0 0 0-4.921 4.922c0 .384.042.76.126 1.12A13.971 13.971 0 0 1 1.678 3.895a4.924 4.924 0 0 0-.666 2.475c0 1.707.867 3.216 2.189 4.097a4.927 4.927 0 0 1-2.23-.614v.061a4.924 4.924 0 0 0 3.95 4.828 4.93 4.93 0 0 1-2.226.085 4.938 4.938 0 0 0 4.597 3.421A9.872 9.872 0 0 1 0 20.288 13.923 13.923 0 0 0 7.55 22.5c9.055 0 14.008-7.505 14.008-14.01 0-.217-.004-.428-.014-.638A9.91 9.91 0 0 0 24 5.306"/>
+    <path id="icon-twitter" fill="#333" fill-rule="evenodd"
+          d="M24 5.306a9.708 9.708 0 0 1-2.826.774 4.952 4.952 0 0 0 2.165-2.724 9.899 9.899 0 0 1-3.126 1.196A4.923 4.923 0 0 0 16.62 3a4.92 4.92 0 0 0-4.921 4.922c0 .384.042.76.126 1.12A13.971 13.971 0 0 1 1.678 3.895a4.924 4.924 0 0 0-.666 2.475c0 1.707.867 3.216 2.189 4.097a4.927 4.927 0 0 1-2.23-.614v.061a4.924 4.924 0 0 0 3.95 4.828 4.93 4.93 0 0 1-2.226.085 4.938 4.938 0 0 0 4.597 3.421A9.872 9.872 0 0 1 0 20.288 13.923 13.923 0 0 0 7.55 22.5c9.055 0 14.008-7.505 14.008-14.01 0-.217-.004-.428-.014-.638A9.91 9.91 0 0 0 24 5.306"/>
 
-    <path id="icon-pinterest" fill="#333" fill-rule="evenodd" d="M12 1.603C6.258 1.603 1.603 6.258 1.603 12c0 4.406 2.742 8.166 6.61 9.68-.09-.82-.174-2.086.037-2.982.188-.81 1.219-5.165 1.219-5.165s-.31-.624-.31-1.542c0-1.444.84-2.527 1.88-2.527.886 0 1.317.666 1.317 1.463 0 .89-.567 2.226-.862 3.459-.249 1.036.515 1.88 1.537 1.88 1.847 0 3.267-1.95 3.267-4.763 0-2.489-1.79-4.228-4.34-4.228-2.958 0-4.692 2.217-4.692 4.514 0 .895.342 1.852.773 2.372.084.103.098.192.07.3-.08.328-.253 1.036-.29 1.181-.047.192-.15.23-.347.14-1.299-.604-2.11-2.502-2.11-4.026 0-3.281 2.382-6.29 6.868-6.29 3.604 0 6.407 2.568 6.407 6.004 0 3.582-2.259 6.47-5.395 6.47-1.055 0-2.044-.55-2.381-1.196l-.647 2.47c-.234.905-.867 2.034-1.294 2.724.975.3 2.007.464 3.08.464 5.742 0 10.397-4.655 10.397-10.397 0-5.747-4.655-10.402-10.397-10.402"/>
+    <path id="icon-pinterest" fill="#333" fill-rule="evenodd"
+          d="M12 1.603C6.258 1.603 1.603 6.258 1.603 12c0 4.406 2.742 8.166 6.61 9.68-.09-.82-.174-2.086.037-2.982.188-.81 1.219-5.165 1.219-5.165s-.31-.624-.31-1.542c0-1.444.84-2.527 1.88-2.527.886 0 1.317.666 1.317 1.463 0 .89-.567 2.226-.862 3.459-.249 1.036.515 1.88 1.537 1.88 1.847 0 3.267-1.95 3.267-4.763 0-2.489-1.79-4.228-4.34-4.228-2.958 0-4.692 2.217-4.692 4.514 0 .895.342 1.852.773 2.372.084.103.098.192.07.3-.08.328-.253 1.036-.29 1.181-.047.192-.15.23-.347.14-1.299-.604-2.11-2.502-2.11-4.026 0-3.281 2.382-6.29 6.868-6.29 3.604 0 6.407 2.568 6.407 6.004 0 3.582-2.259 6.47-5.395 6.47-1.055 0-2.044-.55-2.381-1.196l-.647 2.47c-.234.905-.867 2.034-1.294 2.724.975.3 2.007.464 3.08.464 5.742 0 10.397-4.655 10.397-10.397 0-5.747-4.655-10.402-10.397-10.402"/>
 
-    <path id="icon-linkedin" fill="#333" fill-rule="evenodd" d="M13.15 9v2.128h.06C13.788 10.092 15.201 9 17.308 9c4.382 0 5.192 2.728 5.192 6.275V22.5h-4.327v-6.405c0-1.528-.031-3.493-2.25-3.493-2.254 0-2.598 1.664-2.598 3.382V22.5H9V9h4.15zM6 9v13.5H1.5V9H6zM3.75 3a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5z"/>
+    <path id="icon-linkedin" fill="#333" fill-rule="evenodd"
+          d="M13.15 9v2.128h.06C13.788 10.092 15.201 9 17.308 9c4.382 0 5.192 2.728 5.192 6.275V22.5h-4.327v-6.405c0-1.528-.031-3.493-2.25-3.493-2.254 0-2.598 1.664-2.598 3.382V22.5H9V9h4.15zM6 9v13.5H1.5V9H6zM3.75 3a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5z"/>
 
-    <path id="icon-instagram" fill="#333" fill-rule="evenodd" d="M13.16 0c2.222.005 2.677.022 3.79.075 1.275.056 2.147.263 2.91.558a5.866 5.866 0 0 1 2.124 1.383 5.62 5.62 0 0 1 1.374 2.132c.295.76.501 1.636.558 2.911.048 1.11.065 1.564.07 3.786v2.32c-.005 2.222-.022 2.676-.07 3.785-.057 1.275-.263 2.147-.558 2.91a5.866 5.866 0 0 1-1.383 2.124 5.866 5.866 0 0 1-2.123 1.383c-.76.296-1.636.502-2.911.558-1.195.052-1.63.068-4.331.07h-1.23c-2.7-.002-3.136-.018-4.33-.07-1.275-.056-2.147-.262-2.91-.558a5.866 5.866 0 0 1-2.124-1.383 5.857 5.857 0 0 1-1.388-2.128c-.295-.76-.501-1.636-.558-2.91-.048-1.11-.066-1.564-.07-3.786v-2.32c.004-2.222.022-2.677.07-3.79.057-1.275.263-2.147.558-2.91a5.88 5.88 0 0 1 1.388-2.124A5.857 5.857 0 0 1 4.144.628C4.904.333 5.78.127 7.054.07 8.165.022 8.619.004 10.84 0zm-.849 2.161h-.622c-2.922 0-3.317.016-4.536.07-1.167.052-1.805.249-2.226.413a3.76 3.76 0 0 0-1.379.9c-.417.417-.68.82-.895 1.378-.164.422-.36 1.055-.412 2.226-.051 1.135-.067 1.56-.07 3.968v1.759c.003 2.407.019 2.828.07 3.967.051 1.167.248 1.805.412 2.227.22.558.478.956.9 1.378.417.417.82.68 1.378.895.422.164 1.055.361 2.227.413 1.093.048 1.527.066 3.708.07h2.278c2.18-.005 2.61-.022 3.708-.07 1.167-.052 1.804-.249 2.226-.413a3.76 3.76 0 0 0 1.378-.9c.417-.417.68-.82.896-1.378.164-.422.36-1.055.412-2.227.053-1.176.068-1.59.07-4.243v-1.207c-.002-2.652-.017-3.062-.07-4.243-.052-1.167-.248-1.805-.412-2.227a3.76 3.76 0 0 0-.9-1.378 3.711 3.711 0 0 0-1.379-.895c-.421-.164-1.054-.361-2.226-.413-1.261-.056-1.64-.07-4.847-.07zM12 5.836A6.166 6.166 0 0 1 18.164 12 6.166 6.166 0 0 1 12 18.164 6.166 6.166 0 0 1 5.836 12 6.166 6.166 0 0 1 12 5.836zm0 2.166A3.999 3.999 0 1 0 12.001 16 3.999 3.999 0 0 0 12 8.002zm6.408-3.849a1.44 1.44 0 1 1 0 2.878 1.44 1.44 0 0 1 0-2.878z"/>
+    <path id="icon-instagram" fill="#333" fill-rule="evenodd"
+          d="M13.16 0c2.222.005 2.677.022 3.79.075 1.275.056 2.147.263 2.91.558a5.866 5.866 0 0 1 2.124 1.383 5.62 5.62 0 0 1 1.374 2.132c.295.76.501 1.636.558 2.911.048 1.11.065 1.564.07 3.786v2.32c-.005 2.222-.022 2.676-.07 3.785-.057 1.275-.263 2.147-.558 2.91a5.866 5.866 0 0 1-1.383 2.124 5.866 5.866 0 0 1-2.123 1.383c-.76.296-1.636.502-2.911.558-1.195.052-1.63.068-4.331.07h-1.23c-2.7-.002-3.136-.018-4.33-.07-1.275-.056-2.147-.262-2.91-.558a5.866 5.866 0 0 1-2.124-1.383 5.857 5.857 0 0 1-1.388-2.128c-.295-.76-.501-1.636-.558-2.91-.048-1.11-.066-1.564-.07-3.786v-2.32c.004-2.222.022-2.677.07-3.79.057-1.275.263-2.147.558-2.91a5.88 5.88 0 0 1 1.388-2.124A5.857 5.857 0 0 1 4.144.628C4.904.333 5.78.127 7.054.07 8.165.022 8.619.004 10.84 0zm-.849 2.161h-.622c-2.922 0-3.317.016-4.536.07-1.167.052-1.805.249-2.226.413a3.76 3.76 0 0 0-1.379.9c-.417.417-.68.82-.895 1.378-.164.422-.36 1.055-.412 2.226-.051 1.135-.067 1.56-.07 3.968v1.759c.003 2.407.019 2.828.07 3.967.051 1.167.248 1.805.412 2.227.22.558.478.956.9 1.378.417.417.82.68 1.378.895.422.164 1.055.361 2.227.413 1.093.048 1.527.066 3.708.07h2.278c2.18-.005 2.61-.022 3.708-.07 1.167-.052 1.804-.249 2.226-.413a3.76 3.76 0 0 0 1.378-.9c.417-.417.68-.82.896-1.378.164-.422.36-1.055.412-2.227.053-1.176.068-1.59.07-4.243v-1.207c-.002-2.652-.017-3.062-.07-4.243-.052-1.167-.248-1.805-.412-2.227a3.76 3.76 0 0 0-.9-1.378 3.711 3.711 0 0 0-1.379-.895c-.421-.164-1.054-.361-2.226-.413-1.261-.056-1.64-.07-4.847-.07zM12 5.836A6.166 6.166 0 0 1 18.164 12 6.166 6.166 0 0 1 12 18.164 6.166 6.166 0 0 1 5.836 12 6.166 6.166 0 0 1 12 5.836zm0 2.166A3.999 3.999 0 1 0 12.001 16 3.999 3.999 0 0 0 12 8.002zm6.408-3.849a1.44 1.44 0 1 1 0 2.878 1.44 1.44 0 0 1 0-2.878z"/>
 
-    <path id="icon-facebook" fill="#333" fill-rule="evenodd" d="M14.25 4.5H18V0h-3.75A5.256 5.256 0 0 0 9 5.25V7.5H6V12h3v12h4.5V12h3.75L18 7.5h-4.5V5.25a.76.76 0 0 1 .75-.75"/>
+    <path id="icon-facebook" fill="#333" fill-rule="evenodd"
+          d="M14.25 4.5H18V0h-3.75A5.256 5.256 0 0 0 9 5.25V7.5H6V12h3v12h4.5V12h3.75L18 7.5h-4.5V5.25a.76.76 0 0 1 .75-.75"/>
 
-    <path id="icon-star-empty" d="M12,6.75l.9307,2.8643.4489,1.382h4.465l-2.4365,1.77-1.1756.8541.449,1.3819.9307,2.8644-2.4367-1.77L12,15.2423l-1.1755.8541-2.4367,1.77.9307-2.8644.449-1.3819-1.1756-.8541-2.4365-1.77H10.62l.4489-1.382L12,6.75M12,.2775,9.1672,8.996H0l7.4164,5.3883L4.5836,23.1028,12,17.7145l7.4164,5.3883-2.8328-8.7185L24,8.996H14.8328L12,.2775Z"/>
+    <path id="icon-star-empty"
+          d="M12,6.75l.9307,2.8643.4489,1.382h4.465l-2.4365,1.77-1.1756.8541.449,1.3819.9307,2.8644-2.4367-1.77L12,15.2423l-1.1755.8541-2.4367,1.77.9307-2.8644.449-1.3819-1.1756-.8541-2.4365-1.77H10.62l.4489-1.382L12,6.75M12,.2775,9.1672,8.996H0l7.4164,5.3883L4.5836,23.1028,12,17.7145l7.4164,5.3883-2.8328-8.7185L24,8.996H14.8328L12,.2775Z"/>
 
-    <path id="icon-star-half" d="M24,8.996H14.8328L12,.2775,9.1672,8.996H0l7.4164,5.3883L4.5836,23.1028,12,17.7145l7.4164,5.3883-2.8328-8.7185Zm-10.8245,7.1L12,15.2423V6.75l.9307,2.8643.4489,1.382h4.465l-2.4365,1.77-1.1756.8542.449,1.3819.9307,2.8645Z" style="fill-rule:evenodd"/>
+    <path id="icon-star-half"
+          d="M24,8.996H14.8328L12,.2775,9.1672,8.996H0l7.4164,5.3883L4.5836,23.1028,12,17.7145l7.4164,5.3883-2.8328-8.7185Zm-10.8245,7.1L12,15.2423V6.75l.9307,2.8643.4489,1.382h4.465l-2.4365,1.77-1.1756.8542.449,1.3819.9307,2.8645Z"
+          style="fill-rule:evenodd"/>
 
-    <path id="icon-star-full" d="M12,.2774,14.8328,8.996H24l-7.4164,5.3883,2.8328,8.7185L12,17.7145,4.5836,23.1028l2.8328-8.7185L0,8.996H9.1672Z" style="fill-rule:evenodd"/>
+    <path id="icon-star-full"
+          d="M12,.2774,14.8328,8.996H24l-7.4164,5.3883,2.8328,8.7185L12,17.7145,4.5836,23.1028l2.8328-8.7185L0,8.996H9.1672Z"
+          style="fill-rule:evenodd"/>
 
     <path id="icon-save" d="M18,2V20l-4.8-3.6L12,15.5l-1.2.9L6,20V2H18m2-2H4V24l8-6,8,6V0Z"/>
 
@@ -1119,31 +1390,63 @@
     </g>
 
     <g id="icon-heart-yellow">
-      <path d="M23,7.7764a4.8163,4.8163,0,0,1-1.4766,3.4692l-9.5283,9.3091L2.4756,11.2378a4.8264,4.8264,0,0,1,0-6.9473,5.1561,5.1561,0,0,1,7.1631.0005l2.3691,2.3106,2.3535-2.2945a5.1453,5.1453,0,0,1,7.1621,0A4.819,4.819,0,0,1,23,7.7764Z" style="fill:#fcb814"/>
-      <path d="M6.0569,4A4.1,4.1,0,0,1,8.9405,5.163l3.0674,2.9917,3.0514-2.9755a4.1459,4.1459,0,0,1,5.766,0,3.8143,3.8143,0,0,1,0,5.5069l-8.829,8.6261L3.1751,10.679a3.8265,3.8265,0,0,1-.0014-5.5167A4.1,4.1,0,0,1,6.0569,4m0-2h0a6.1044,6.1044,0,0,0-4.28,1.7312,5.8264,5.8264,0,0,0,0,8.3776l10.0268,9.8131a.2747.2747,0,0,0,.3837,0q5.0195-4.9005,10.0354-9.8047a5.8143,5.8143,0,0,0,0-8.3691,6.1459,6.1459,0,0,0-8.56,0l-1.6541,1.613-1.6712-1.63A6.1037,6.1037,0,0,0,6.0569,2Z"/>
+      <path
+        d="M23,7.7764a4.8163,4.8163,0,0,1-1.4766,3.4692l-9.5283,9.3091L2.4756,11.2378a4.8264,4.8264,0,0,1,0-6.9473,5.1561,5.1561,0,0,1,7.1631.0005l2.3691,2.3106,2.3535-2.2945a5.1453,5.1453,0,0,1,7.1621,0A4.819,4.819,0,0,1,23,7.7764Z"
+        style="fill:#fcb814"/>
+      <path
+        d="M6.0569,4A4.1,4.1,0,0,1,8.9405,5.163l3.0674,2.9917,3.0514-2.9755a4.1459,4.1459,0,0,1,5.766,0,3.8143,3.8143,0,0,1,0,5.5069l-8.829,8.6261L3.1751,10.679a3.8265,3.8265,0,0,1-.0014-5.5167A4.1,4.1,0,0,1,6.0569,4m0-2h0a6.1044,6.1044,0,0,0-4.28,1.7312,5.8264,5.8264,0,0,0,0,8.3776l10.0268,9.8131a.2747.2747,0,0,0,.3837,0q5.0195-4.9005,10.0354-9.8047a5.8143,5.8143,0,0,0,0-8.3691,6.1459,6.1459,0,0,0-8.56,0l-1.6541,1.613-1.6712-1.63A6.1037,6.1037,0,0,0,6.0569,2Z"/>
     </g>
 
-    <path id="icon-heart" d="M6.0569,4A4.1,4.1,0,0,1,8.9405,5.163l3.0674,2.9917,3.0514-2.9755a4.1459,4.1459,0,0,1,5.766,0,3.8143,3.8143,0,0,1,0,5.5069l-8.829,8.6261L3.1751,10.679a3.8265,3.8265,0,0,1-.0014-5.5167A4.1,4.1,0,0,1,6.0569,4m0-2h0a6.1044,6.1044,0,0,0-4.28,1.7312,5.8264,5.8264,0,0,0,0,8.3776l10.0268,9.8131a.2747.2747,0,0,0,.3837,0q5.0195-4.9005,10.0354-9.8047a5.8143,5.8143,0,0,0,0-8.3691,6.1459,6.1459,0,0,0-8.56,0l-1.6541,1.613-1.6712-1.63A6.1037,6.1037,0,0,0,6.0569,2Z"/>
+    <path id="icon-heart"
+          d="M6.0569,4A4.1,4.1,0,0,1,8.9405,5.163l3.0674,2.9917,3.0514-2.9755a4.1459,4.1459,0,0,1,5.766,0,3.8143,3.8143,0,0,1,0,5.5069l-8.829,8.6261L3.1751,10.679a3.8265,3.8265,0,0,1-.0014-5.5167A4.1,4.1,0,0,1,6.0569,4m0-2h0a6.1044,6.1044,0,0,0-4.28,1.7312,5.8264,5.8264,0,0,0,0,8.3776l10.0268,9.8131a.2747.2747,0,0,0,.3837,0q5.0195-4.9005,10.0354-9.8047a5.8143,5.8143,0,0,0,0-8.3691,6.1459,6.1459,0,0,0-8.56,0l-1.6541,1.613-1.6712-1.63A6.1037,6.1037,0,0,0,6.0569,2Z"/>
 
     <g id="icon-heart-brown">
-      <path d="M23,7.7764a4.8163,4.8163,0,0,1-1.4766,3.4692l-9.5283,9.3091L2.4756,11.2378a4.8264,4.8264,0,0,1,0-6.9473,5.1561,5.1561,0,0,1,7.1631.0005l2.3691,2.3106,2.3535-2.2945a5.1453,5.1453,0,0,1,7.1621,0A4.819,4.819,0,0,1,23,7.7764Z" style="fill:#975f20"/>
-      <path d="M6.0569,4A4.1,4.1,0,0,1,8.9405,5.163l3.0674,2.9917,3.0514-2.9755a4.1459,4.1459,0,0,1,5.766,0,3.8143,3.8143,0,0,1,0,5.5069l-8.829,8.6261L3.1751,10.679a3.8265,3.8265,0,0,1-.0014-5.5167A4.1,4.1,0,0,1,6.0569,4m0-2h0a6.1044,6.1044,0,0,0-4.28,1.7312,5.8264,5.8264,0,0,0,0,8.3776l10.0268,9.8131a.2747.2747,0,0,0,.3837,0q5.0195-4.9005,10.0354-9.8047a5.8143,5.8143,0,0,0,0-8.3691,6.1459,6.1459,0,0,0-8.56,0l-1.6541,1.613-1.6712-1.63A6.1037,6.1037,0,0,0,6.0569,2Z"/>
+      <path
+        d="M23,7.7764a4.8163,4.8163,0,0,1-1.4766,3.4692l-9.5283,9.3091L2.4756,11.2378a4.8264,4.8264,0,0,1,0-6.9473,5.1561,5.1561,0,0,1,7.1631.0005l2.3691,2.3106,2.3535-2.2945a5.1453,5.1453,0,0,1,7.1621,0A4.819,4.819,0,0,1,23,7.7764Z"
+        style="fill:#975f20"/>
+      <path
+        d="M6.0569,4A4.1,4.1,0,0,1,8.9405,5.163l3.0674,2.9917,3.0514-2.9755a4.1459,4.1459,0,0,1,5.766,0,3.8143,3.8143,0,0,1,0,5.5069l-8.829,8.6261L3.1751,10.679a3.8265,3.8265,0,0,1-.0014-5.5167A4.1,4.1,0,0,1,6.0569,4m0-2h0a6.1044,6.1044,0,0,0-4.28,1.7312,5.8264,5.8264,0,0,0,0,8.3776l10.0268,9.8131a.2747.2747,0,0,0,.3837,0q5.0195-4.9005,10.0354-9.8047a5.8143,5.8143,0,0,0,0-8.3691,6.1459,6.1459,0,0,0-8.56,0l-1.6541,1.613-1.6712-1.63A6.1037,6.1037,0,0,0,6.0569,2Z"/>
     </g>
 
     <g id="icon-cart-yellow">
-      <path d="M21,6.0532H6l2-1.8h3l2-1.2h1l2,1.2,3-1.2h1Zm-12,12a2,2,0,1,0,2,2A2,2,0,0,0,9,18.0532Zm8,0a2,2,0,1,0,2,2A2,2,0,0,0,17,18.0532Z" style="fill:#fcb814"/>
-      <path d="M24,6.043H4.3878L3.8828,2H0V3.9949H2.1172l2,16.0127H6a3,3,0,0,0,6,0h2a3,3,0,0,0,6,0h.8408l2.0874-11.97H24ZM9,21.0532a1,1,0,1,1,1-1A1.0009,1.0009,0,0,1,9,21.0532Zm8,0a1,1,0,1,1,1-1A1.0009,1.0009,0,0,1,17,21.0532Zm2.17-3.0605a2.9692,2.9692,0,0,0-4.3894.0605H11.22a2.9635,2.9635,0,0,0-4.4394,0H5.8828l-.7475-6H20.2024ZM20.55,10.0532H4.8861l-.2491-2H20.8979Z"/>
+      <path
+        d="M21,6.0532H6l2-1.8h3l2-1.2h1l2,1.2,3-1.2h1Zm-12,12a2,2,0,1,0,2,2A2,2,0,0,0,9,18.0532Zm8,0a2,2,0,1,0,2,2A2,2,0,0,0,17,18.0532Z"
+        style="fill:#fcb814"/>
+      <path
+        d="M24,6.043H4.3878L3.8828,2H0V3.9949H2.1172l2,16.0127H6a3,3,0,0,0,6,0h2a3,3,0,0,0,6,0h.8408l2.0874-11.97H24ZM9,21.0532a1,1,0,1,1,1-1A1.0009,1.0009,0,0,1,9,21.0532Zm8,0a1,1,0,1,1,1-1A1.0009,1.0009,0,0,1,17,21.0532Zm2.17-3.0605a2.9692,2.9692,0,0,0-4.3894.0605H11.22a2.9635,2.9635,0,0,0-4.4394,0H5.8828l-.7475-6H20.2024ZM20.55,10.0532H4.8861l-.2491-2H20.8979Z"/>
     </g>
 
     <g id="icon-cart">
       <path d="M9,18a2,2,0,1,0,2,2A2,2,0,0,0,9,18Zm8,0a2,2,0,1,0,2,2A2,2,0,0,0,17,18Z" style="fill:#fcb814"/>
-      <path d="M24,6.043H4.3878L3.8828,2H0V3.9949H2.1172l2,16.0127H6a3,3,0,0,0,6,0h2a3,3,0,0,0,6,0h.8408l2.0874-11.97H24ZM9,21.0051a.9975.9975,0,1,1,1-.9975A1,1,0,0,1,9,21.0051Zm8,0a.9975.9975,0,1,1,1-.9975A1,1,0,0,1,17,21.0051Zm2.17-3.0529a2.9745,2.9745,0,0,0-4.3894.06H11.22a2.9687,2.9687,0,0,0-4.4394,0H5.8828l-.7475-5.9848H20.2024ZM20.55,10.0329H4.8861L4.637,8.0379H20.8979Z"/>
+      <path
+        d="M24,6.043H4.3878L3.8828,2H0V3.9949H2.1172l2,16.0127H6a3,3,0,0,0,6,0h2a3,3,0,0,0,6,0h.8408l2.0874-11.97H24ZM9,21.0051a.9975.9975,0,1,1,1-.9975A1,1,0,0,1,9,21.0051Zm8,0a.9975.9975,0,1,1,1-.9975A1,1,0,0,1,17,21.0051Zm2.17-3.0529a2.9745,2.9745,0,0,0-4.3894.06H11.22a2.9687,2.9687,0,0,0-4.4394,0H5.8828l-.7475-5.9848H20.2024ZM20.55,10.0329H4.8861L4.637,8.0379H20.8979Z"/>
     </g>
 
     <g id="icon-cart-brown">
-      <path d="M21,6.0532H6l2-1.8h3l2-1.2h1l2,1.2,3-1.2h1Zm-12,12a2,2,0,1,0,2,2A2,2,0,0,0,9,18.0532Zm8,0a2,2,0,1,0,2,2A2,2,0,0,0,17,18.0532Z" style="fill:#975f20"/>
-      <path d="M24,6.043H4.3878L3.8828,2H0V3.9949H2.1172l2,16.0127H6a3,3,0,0,0,6,0h2a3,3,0,0,0,6,0h.8408l2.0874-11.97H24ZM9,21.0532a1,1,0,1,1,1-1A1.0009,1.0009,0,0,1,9,21.0532Zm8,0a1,1,0,1,1,1-1A1.0009,1.0009,0,0,1,17,21.0532Zm2.17-3.0605a2.9692,2.9692,0,0,0-4.3894.0605H11.22a2.9635,2.9635,0,0,0-4.4394,0H5.8828l-.7475-6H20.2024ZM20.55,10.0532H4.8861l-.2491-2H20.8979Z"/>
+      <path
+        d="M21,6.0532H6l2-1.8h3l2-1.2h1l2,1.2,3-1.2h1Zm-12,12a2,2,0,1,0,2,2A2,2,0,0,0,9,18.0532Zm8,0a2,2,0,1,0,2,2A2,2,0,0,0,17,18.0532Z"
+        style="fill:#975f20"/>
+      <path
+        d="M24,6.043H4.3878L3.8828,2H0V3.9949H2.1172l2,16.0127H6a3,3,0,0,0,6,0h2a3,3,0,0,0,6,0h.8408l2.0874-11.97H24ZM9,21.0532a1,1,0,1,1,1-1A1.0009,1.0009,0,0,1,9,21.0532Zm8,0a1,1,0,1,1,1-1A1.0009,1.0009,0,0,1,17,21.0532Zm2.17-3.0605a2.9692,2.9692,0,0,0-4.3894.0605H11.22a2.9635,2.9635,0,0,0-4.4394,0H5.8828l-.7475-6H20.2024ZM20.55,10.0532H4.8861l-.2491-2H20.8979Z"/>
     </g>
+
+    <path id="icon-plus" fill="#333" fill-rule="evenodd" d="M13-.059v11h11v2H13v11h-2v-11H0v-2h11v-11h2z"/>
+
+    <path id="icon-x" fill="#333" fill-rule="evenodd"
+          d="M21.192 4.222L13.414 12l7.778 7.778-1.414 1.414L12 13.414l-7.778 7.778-1.414-1.414L10.586 12 2.808 4.222l1.414-1.414L12 10.586l7.778-7.778 1.414 1.414z"/>
+
+    <g id="icon-x-outline">
+      <path
+        d="M14.8281,12l7.7783,7.7783-2.8281,2.8281L12,14.8281,4.2217,22.6064,1.3936,19.7783,9.1719,12,1.3936,4.2217,4.2217,1.3936,12,9.1719l7.7783-7.7783,2.8281,2.8281Z"
+        style="fill:#fff"/>
+      <path
+        d="M13.4142,12l7.7782,7.7782-1.4142,1.4142L12,13.4142,4.2218,21.1924,2.8076,19.7782,10.5858,12,2.8076,4.2218,4.2218,2.8076,12,10.5858l7.7782-7.7782,1.4142,1.4142Z"/>
+    </g>
+
+    <path id="icon-minus" fill="#333" fill-rule="evenodd" d="M.029 11h24v2h-24z"/>
+
+    <path id="icon-arrow" fill="#333" fill-rule="evenodd"
+          d="M18.9 12L9 21.9l-1.414-1.415L16.07 12 7.586 3.515 9 2.1 18.9 12z"/>
 
   </defs>
 </svg>

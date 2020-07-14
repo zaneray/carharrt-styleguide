@@ -1,3 +1,10 @@
+svg {
+  fill: $gray-600;
+}
+
+.svg-container {
+  display: none;
+}
 
 .bg-icon-zoom-in {
   background-image: url($icon-zoom-in);
@@ -64,7 +71,7 @@
 }
 
 .bg-icon-account-yellow {
-  background-image: url($icon-account-yello);
+  background-image: url($icon-account-yellow);
 }
 
 .bg-icon-account {

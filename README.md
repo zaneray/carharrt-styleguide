@@ -1,7 +1,7 @@
 DEMO: https://zaneray.github.io/carharrt-styleguide/
 
-# carharrt-styleguide
-A light css framework and digital styleguide for Carharrt
+# carhartt-styleguide
+A light css framework and digital styleguide for Carhartt
 
 ### Getting Started
 Navigate to the root of this directory and run `npm install`

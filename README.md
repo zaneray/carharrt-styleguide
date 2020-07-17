@@ -1,7 +1,7 @@
-DEMO: https://zaneray.github.io/carharrt-styleguide/
-
 # carhartt-styleguide
 A light css framework and digital styleguide for Carhartt
+
+Live Styleguide: https://zaneray.github.io/carharrt-styleguide/
 
 ## Styleguide Development
 
@@ -32,5 +32,5 @@ styles defined for the main site and UI elements to be respected.  Any CSS style
 override it if there are any overlapping selectors.  
  
 ### Develop with examples
-Once the `main.css` file has been included in your site/appication CSS build, you can make use of that CSS by following/copying the 
+Once the `main.css` file has been included in your site/application CSS build, you can make use of that CSS by following/copying the 
 HTML code examples in the live digitial Styleguide.  

@@ -30,6 +30,18 @@ To make use of the light CSS framework provided by this repository, simply copy 
 in the CSS build of your web application.  Ideally it is included as one of the first CSS files in that build, in order for the
 styles defined for the main site and UI elements to be respected.  Any CSS styles that are in the build after this file will essentially
 override it if there are any overlapping selectors.  
+
+### Icons
+In order to take advantage of the SVG icon set that is shown in the Styleguide, you will need to include the `/dist/icons/icons.html` file in your
+web application.  This HTML file has the SVG markup of every icon shown in the Styleguide, wrapped in a single element that is visually hidden.
+The strategy is to include this HTML file at the bottom of your web application build, so that it exists on every page, or at least on every page that 
+uses these icons.  By having the visually hidden SVG reference in your web app markup, you can then display any SVG that has been defined in that 
+markup by using the `<use>` tag strategy that is detailed in the Icons section of the Styleguide.
+
+### Fonts
+The CSS framework has been built to use Font Faces that reference font files which are defined at a specific path.  This path may need to change 
+for your web application, and the Font Face declarations would also need to change.  The best strategy is to include the `main.css` file in your CSS build, and below that file declare new Font Faces that use the same setup as the font faces in `/src/scss/_fonts.scss`, with updated paths to the proper font files in your
+application repository.
  
 ### Develop with examples
 Once the `main.css` file has been included in your site/application CSS build, you can make use of that CSS by following/copying the 

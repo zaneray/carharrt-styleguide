@@ -1,0 +1,105 @@
+$accordion-border-color: $gray-500;
+$accordion-border-width: 0.0625rem; //1px
+
+.accordion-controls {
+  padding: 0;
+  list-style: none;
+}
+
+.accordion-trigger {
+  text-align: left;
+  display: block;
+  width: 100%;
+  padding: $spacing-300 $spacing-100;
+  border: none;
+  border-top: $accordion-border-width solid $accordion-border-color;
+  background-color: transparent;
+  font-size: $font-size-100;
+  position: relative;
+  font-family: $font-family-sans-bold;
+  text-transform: uppercase;
+  color: $gray-600;
+
+  &:after {
+    position: absolute;
+    top: $spacing-300;
+    right: $spacing-100;
+    width: $spacing-300;
+    height: $spacing-300;
+    content: url($icon-plus);
+  }
+}
+
+.accordion-controls li:last-of-type {
+  border-bottom: $accordion-border-width solid $accordion-border-color;
+}
+
+.accordion-trigger[aria-expanded="true"] {
+  &:after {
+    content: url($icon-minus);
+  }
+}
+
+.accordion-panel {
+  display: none;
+}
+
+// style overrides for gray accordion
+.accordion-gray {
+  .accordion-trigger {
+    background-color: $gray-150;
+    border-color: $gray-300;
+    padding: 0 $spacing-100;
+    margin: 0;
+    border: none;
+
+    div {
+      padding: $spacing-300 0 $spacing-300 $spacing-500;
+      background-color: unset;
+      border-top: $accordion-border-width solid $gray-300;
+    }
+
+    .accordion-clear-button {
+      position: absolute;
+      bottom: $spacing-300;
+      right: $spacing-300;
+      background-color: unset;
+      text-transform: capitalize;
+      font-size: $font-size-100;
+      line-height: $font-size-100;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: -$spacing-300;
+        content: url($icon-x-small);
+        height: $spacing-200;
+        width: $spacing-200;
+      }
+    }
+
+    &:after {
+      left: $spacing-300;
+      right: unset;
+      height: $spacing-200;
+      width: $spacing-200;
+    }
+  }
+
+  li:last-of-type {
+    border: none;
+
+    .accordion-trigger div {
+      border-bottom: $accordion-border-width solid $gray-300;
+    }
+  }
+
+  .accordion-panel {
+    background-color: $gray-150;
+    padding: 0 $spacing-300 $spacing-300 $spacing-300;
+  }
+
+  .accordion-panel-inner {
+    padding: $spacing-300 0
+  }
+}

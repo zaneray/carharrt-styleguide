@@ -1,0 +1,27 @@
+hr {
+  border: none;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: $gray-700;
+
+  &.border-large {
+    border-top-width: 4px;
+  }
+
+  &.border-medium {
+    border-top-width: 2px;
+  }
+
+  &.border-dashed {
+    border-top-style: dashed;
+  }
+
+  &.border-light {
+    border-top-color: $gray-300;
+  }
+
+  &.border-white {
+    border-top-color: $white;
+    background-color: $gray-700;
+  }
+}

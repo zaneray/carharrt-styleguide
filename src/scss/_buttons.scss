@@ -1,0 +1,84 @@
+/* BUTTON STYLES */
+button {
+  cursor: pointer;
+}
+
+.btn {
+  display: block;
+  font-family: $font-family-sans-bold;
+  font-size: $font-size-100;
+  line-height: $font-size-100;
+  letter-spacing: $letter-spacing-medium;
+  text-transform: uppercase;
+  background-color: $gold;
+  border: 2px solid $gold;
+  color: $gray-600;
+  padding: $spacing-300 $spacing-400;
+  transition: $transition-base;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border-color: $gray-600;
+    color: $gray-600;
+  }
+
+  &.btn-secondary {
+    background-color: $gray-700;
+    border: 2px solid $gray-700;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $brown-dark;
+      border: 2px solid $brown-dark;
+      color: $white;
+    }
+  }
+
+  &.btn-transparent {
+    background-color: transparent;
+    border: 2px solid $gray-700;
+    color: $gray-700;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border: 2px solid $brown-dark;
+      color: $brown-dark;
+    }
+  }
+
+  &.btn-small {
+    font-size: $font-size-75;
+    line-height: $font-size-100;
+    padding: $spacing-100 $spacing-300;
+  }
+
+  &.btn-large {
+    font-size: $font-size-400;
+    line-height: $font-size-400;
+    padding: $spacing-350 $spacing-500;
+  }
+}
+
+.dark-theme {
+  .btn-secondary {
+    color: $gray-700;
+    background-color: $gray-100;
+    border-color: $gray-100;
+  }
+
+  .btn-transparent {
+    border-color: $white;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      border-color: $brown-light;
+      color: $brown-light;
+    }
+  }
+}
+
+/* END BUTTON STYLES */

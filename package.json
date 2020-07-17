@@ -1,7 +1,7 @@
 {
-  "name": "carharrt-styleguide",
+  "name": "carhartt-styleguide",
   "version": "1.0.0",
-  "description": "A living digital styleguide for the Carharrt brand",
+  "description": "A living digital styleguide for the Carhartt brand",
   "main": "index.js",
   "scripts": {
     "scss": "node-sass --output-style compressed -o dist/css src/scss",
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/zaneray/carharrt-styleguide.git"
   },
   "keywords": [
-    "Carharrt",
+    "Carhartt",
     "styleguide"
   ],
   "author": "The ZaneRay Group",
@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/zaneray/carharrt-styleguide#readme",
   "devDependencies": {
-    "autoprefixer": "^9.8.0",
     "node-sass": "^4.14.1",
     "onchange": "^7.0.2",
     "postcss-cli": "^7.1.1",

@@ -31,12 +31,21 @@ $gray-500: #717171;
 $gray-600: #333333;
 $gray-700: #222222;
 
-// Font Families
-$font-family-sans-bold: "ConduitITCStd-Bold", serif;
-$font-family-sans-medium: "ConduitITCStd-Medium", serif;
-$font-family-sans-regular: "ConduitITCStd-Regular", serif;
-$font-family-sans-italic: "ConduitITCStd-MediumItalic", serif;
-$font-family-sans-light: "ConduitITCStd-Light", serif;
+// Font Families - how to reference local versions of conduit
+//$font-family-sans-bold: "ConduitITCStd-Bold", serif;
+//$font-family-sans-medium: "ConduitITCStd-Medium", serif;
+//$font-family-sans-regular: "ConduitITCStd-Regular", serif;
+//$font-family-sans-italic: "ConduitITCStd-MediumItalic", serif;
+//$font-family-sans-light: "ConduitITCStd-Light", serif;
+
+ //These are variables for the placeholder font family Saira
+$font-family-sans-bold: "Font-Bold", serif;
+$font-family-sans-medium: "Font-Medium", serif;
+$font-family-sans-regular: "Font-Regular", serif;
+$font-family-sans-italic: "Font-Medium-Italic", serif;
+$font-family-sans-light: "Font-Light", serif;
+
+
 
 //Font sizes
 $font-size-1000:   4.5rem;     // 72px

@@ -20,11 +20,11 @@ textarea {
   color: $gray-500;
   font-family: $font-family-sans-italic;
   font-size: $font-size-100;
-  transition: $transition-base;
   margin: $spacing-100 0 $spacing-400;
   -webkit-appearance: none;
   appearance: none;
   box-shadow: none;
+  cursor: pointer;
 
   &:focus,
   &:active,
@@ -103,6 +103,7 @@ select {
   background-image: url($icon-select-small);
   background-repeat: no-repeat;
   border-radius: 0;
+  cursor: pointer;
 }
 
 .select-with-link {
@@ -156,6 +157,7 @@ fieldset {
   $checkbox-size: $spacing-350; //20px
   $checkbox-border-width: 0.0625rem; //1px
   $checkbox-focus-width: 0.1875rem; //3px
+  cursor: pointer;
 
   display: flex;
   align-items: center;
@@ -229,6 +231,7 @@ fieldset {
   $radio-size: $spacing-350; //20px
   $radio-border-width: 0.0625rem; //1px
   $radio-focus-width: 0.1875rem; //3px
+  cursor: pointer;
 
   display: flex;
   align-items: center;
@@ -308,6 +311,7 @@ fieldset {
   $color-radio-size-small: $spacing-500; // 32px
   $color-radio-border-width: 0.0625rem; //1px
   $color-radio-focus-width: 0.1875rem; //3px
+  cursor: pointer;
 
   position: relative;
   display: inline-block;
@@ -377,6 +381,7 @@ fieldset {
   width: $spacing-700;
   border: none;
   border-radius: $spacing-400/2;
+  cursor: pointer;
 
   &:disabled,
   &[disabled] {

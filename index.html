@@ -9,15 +9,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="dist/js/app.js"></script>
 
-  <!--  &lt;!&ndash; Typekit Fonts, Proxima Nova and Alt Gothic &ndash;&gt;-->
-  <!--  <script src="https://use.typekit.net/gtn2asa.js"></script>-->
-  <!--  <script>try{Typekit.load({ async: true });}catch(e){}</script>-->
+  <link href="https://fonts.googleapis.com/css2?family=Saira:wght@200;400;500;700&display=swap" rel="stylesheet">
 
-  <!--  &lt;!&ndash; Custom Hand OR Font &ndash;&gt;-->
-  <!--  <link rel="stylesheet" href="https://i.icomoon.io/public/78b709aad2/HandORFont/style.css">-->
-
-  <!--  &lt;!&ndash; Icomoon dev link &ndash;&gt;-->
-  <!--  <link rel="stylesheet" href="https://i.icomoon.io/public/78b709aad2/OutdoorResearch/style.css">-->
 </head>
 <body>
 
@@ -253,6 +246,12 @@
   <div id="interface-elements" class="interface-elements">
     <div id="text-styles-section" class="style-guide-section">
       <h2 class="section-header">Font Sizes</h2>
+      <p>A note on fonts: a licensed version of the correct font (Conduit) was unavailable for this styleguide. Saira from Google fonts has been substituted in its place. To change back to Conduit:</p>
+      <ol>
+        <li>Put the files for Conduit in <code>/dist/fonts</code></li>
+        <li>Uncomment the font variables for Conduit in <code>variables.scss</code> and comment out the variables for Saira.</li>
+        <li>Uncomment the font face rules for Conduit in <code>fonts.scss</code> and ensure the names in the font face rules match the filenames of the fonts.</li>
+      </ol>
       <div class="text-style-section responsive-table">
         <table>
           <tr>

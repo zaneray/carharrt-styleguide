@@ -14,7 +14,7 @@
   padding: 0 $spacing-300;
 
   @media (min-width: $screen-desktop) {
-    width: $screen-desktop;
+    max-width: 1400px;
     margin: 0 auto;
   }
 }

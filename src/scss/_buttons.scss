@@ -1,4 +1,7 @@
 /* BUTTON STYLES */
+button {
+  cursor: pointer;
+}
 
 .btn {
   display: block;
@@ -12,6 +15,7 @@
   color: $gray-600;
   padding: $spacing-300 $spacing-400;
   transition: $transition-base;
+  cursor: pointer;
 
   &:hover,
   &:focus {
